@@ -83,6 +83,7 @@
 ## 1. Overview
 
 This document is the official technical whitepaper for the 'Singulari-Tea Codex' project, detailing its technical architecture, design principles, and implementation specifics. The project aims to achieve stability, scalability, and maintainability in complex, state-dependent narrative simulations through a modular prompt architecture based on the Single Responsibility Principle.
+<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 ## 2. Technical Background and Execution Environment
 
