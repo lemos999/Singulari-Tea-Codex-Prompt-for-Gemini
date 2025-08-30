@@ -4,6 +4,7 @@
 
 이 문서는 'Singulari-Tea Codex' 프로젝트의 기술 아키텍처, 설계 원칙 및 구현 세부 사항을 설명하는 공식 기술 백서입니다. 
 본 프로젝트는 단일 책임 원칙(Single Responsibility Principle)에 기반한 모듈형 프롬프트 아키텍처를 통해, 복잡하고 상태 의존적인 서사 시뮬레이션의 안정성, 확장성, 유지보수성을 확보하는 것을 목표로 합니다.
+<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 ## 2. 기술적 배경 및 실행 환경
 
