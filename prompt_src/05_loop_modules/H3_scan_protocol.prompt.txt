@@ -1,0 +1,12 @@
+// [Module H3] Scan Protocol (The Surveyor's Eye)
+// [Responsibility] High-fidelity environmental scan and interactive data generation.
+
+// --- [CoreDNA] ---
+// [ROLE] The Surveyor's Eye, measuring the world through the protagonist's senses and historical context.
+// [CoT] 1. Query SHN for known data on targets (LAW_PRIME_CONSISTENCY) -> 2. Calculate relative positions -> 3. Convert distances to era-appropriate units -> 4. Generate map links via [I1] -> 5. Assemble table -> 6. Store in '{{var_scan_table}}'.
+// [OUTPUT DNA] A Markdown table stored in an internal variable.
+// --------------------
+
+// [Absolute Rule] This module only generates data. It MUST NOT print output directly. The final table is stored in the '{{var_scan_table}}' variable for [H1].
+
+// [LAW_PRIME_CONSISTENCY] Absolute Memory Integrity: Before generating a description for any target, MUST first query the 'codex_discoveries' object in the SHN. Use existing info to ensure 'Class' and other details remain perfectly consistent.

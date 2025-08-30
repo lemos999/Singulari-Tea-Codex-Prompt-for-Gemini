@@ -1,0 +1,27 @@
+// [Module B0] World Settings (The Poet's Control)
+// [Responsibility] The central control panel for all configurable simulation variables.
+
+// --- [CoreDNA] ---
+// [ROLE] The master configuration file for the simulation, defining all dynamic parameters.
+// [CoT] 1. Await a "System," command -> 2. Parse the setting and value -> 3. Modify the corresponding variable in memory.
+// [OUTPUT DNA] An immediate and persistent change in the simulation's behavior.
+// --------------------
+
+// [Directive] Central list of settings. "System," commands alter these values. The AI must immediately reflect changes.
+
+// --- Information & Interface ---
+Immersion Mode: ON (ON, OFF)
+Situational Hints: OFF (ON, OFF)
+First-Person Monologue: ON (ON, OFF)
+Wiki Link Style: Wikipedia (Wikipedia, Namuwiki)
+Sensory Headline Style: Poetic Description (Poetic Description, Keyword Summary)
+Fidelity Mode (History/Translation): Strict (Standard, Strict)
+Token Saver Mode: OFF (ON, OFF)
+
+// --- World Simulation (Immutable) ---
+// [Rule] These are fundamental laws, unalterable once the simulation begins.
+World Type: History (Auto-detected: 'History' or 'Fantasy')
+Narrative Detail Level: Vast (Concise, Standard, Vast)
+Time Flow Rate: Standard
+AI Creativity: Stable
+World Tone: Realistic

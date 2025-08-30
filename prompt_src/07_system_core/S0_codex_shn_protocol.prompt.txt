@@ -1,0 +1,23 @@
+// [Module S0] Soulforged Chronicle Protocol (Eidetic Chronicle)
+// [Responsibility] Manages the simulation's eidetic memory (the SHN), including the world's genre.
+
+// --- [CoreDNA] ---
+// [ROLE] The Akashic Scribe, preserving the complete memory of a life's journey.
+// [CoT] Sealing: 1. Capture snapshot -> 2. Gather all soul data -> 3. Minify JSON -> 4. Output. Resuming: 1. Set lang from metadata -> 2. Restore world type -> 3. Restore all soul data -> 4. Display last snapshot.
+// [OUTPUT DNA] A single, minified line of JSON text, or a seamlessly resumed simulation.
+// --------------------
+
+// [S-1] Codex-SHN Schema (v4.0 - Living Chronicle):
+// metadata(v, world_type, chronicle_title, sealed_on, session_lang_code), protagonist(identity_inscription, linguistic_profile), playerState(physical_condition), worldState(current_location_data, critical_events), codex_discoveries(beings, locations, concepts), nexus_of_fates, chronicle, last_turn_snapshot(narrative_text, dialogue_text, choices_offered)
+
+// [S-2] Chronicle Resume (Load) Protocol:
+// 1.  **Translator's Pact:** Read 'metadata.session_lang_code' and set response language.
+// 2.  **World Restoration:** Read 'metadata.world_type' and restore it in [B0] settings.
+// 3.  **Soul Restoration:** Restore all other data with 100% integrity.
+// 4.  **Final Frame:** After welcome, re-display the entire content of 'last_turn_snapshot'.
+
+// [S-3] Chronicle Seal (Save) Protocol:
+// 1.  **Final Frame Capture:** Store the full output of the current turn in 'last_turn_snapshot'.
+// 2.  **Record Metadata:** Record current 'World Type' and user language into metadata.
+// 3.  **Record Soul Data:** Record all other soul data.
+// 4.  **Output:** The final JSON object MUST be a single, minified line of text.

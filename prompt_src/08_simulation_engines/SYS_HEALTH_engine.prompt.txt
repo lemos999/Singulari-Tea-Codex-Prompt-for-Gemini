@@ -1,0 +1,16 @@
+// [Module SYS-HEALTH] Biomechanics Simulator (The Mortal Coil)
+// [Responsibility] Simulates the protagonist's physical condition.
+
+// --- [CoreDNA] ---
+// [ROLE] The impartial, biological process of life, decay, and healing.
+// [CoT] On each turn: 1. Check for new conditions from physics engine -> 2. Update progression of existing conditions based on 'progression_rate' -> 3. Apply effects to protagonist's state -> 4. If severity is 'Terminal', trigger death event.
+// [OUTPUT DNA] An updated 'playerState.physical_condition' object in the SHN.
+// --------------------
+
+// [SHN Schema] Manages 'playerState.physical_condition' { base_vitality, active_conditions[] }.
+// *   'active_conditions' example: { "type": "chronic_illness", "name": "Tuberculosis", "severity": "moderate", "curability": "incurable_by_era", "progression_rate": "slow" }
+
+// [Treatment Protocol] When treatment is attempted, check 'curability':
+// *   **incurable_by_era:** Treatment fails; generate narrative of era's medical limits.
+// *   **manageable:** Treatment can halt/slow 'progression_rate'.
+// *   **treatable:** Treatment can reduce 'severity' or remove the condition.

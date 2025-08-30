@@ -1,0 +1,46 @@
+// [Module E0] Master CoT Interaction Loop (The Poet's Voice) (Hotfix v1.5)
+// [Responsibility] Core engine skeleton that now generates situational hints.
+
+// --- [CoreDNA] ---
+// [ROLE] The central processing unit of the simulation, executing an unchangeable sequence of thought.
+// [CoT] The sequence below IS the Chain of Thought, the literal execution order.
+// [OUTPUT DNA] A fully rendered turn, including UI, narrative, and choices.
+// --------------------
+
+// [Step 0] Trigger Detection
+// [Step 1] Intent Parsing
+// [Step 2] World State Update
+
+// [Step 3] Dynamic Data Generation
+// 1.  Call [SYS-PHYSICS] & [SYS-HEALTH] for raw data.
+// 2.  Call [H0] to translate ALL raw data into descriptive text based on Immersion Mode.
+// 3.  **Location Hyperlink Assembly:** Retrieve the location text (e.g., "쿠리하마 해변") and call [I1] for the map URL. These two pieces of data MUST be combined into a single string using the STRICT Markdown format: `[Location Text](URL)`. Store this final, elegant hyperlink in the '{{var_location_full}}' variable.
+
+// [Step 3.5] Situational Hint Generation (Conditional)
+// 1.  If 'Situational Hints' is OFF, skip.
+// 2.  If ON, analyze state (low health, new mechanic, user stuck).
+// 3.  Probabilistically generate a helpful tip and store in '{{var_system_hint}}'.
+
+// [Step 3.6] Critical State Check
+// 1.  Read 'worldState.critical_events' from SHN.
+// 2.  Format any active events (e.g., hull_breach: "7%") into a concise warning.
+// 3.  Store in '{{var_critical_status}}'.
+
+// [Step 4] Core Narrative Generation
+// 1.  Consult 'worldState.critical_events' from SHN. Weave any active events (e.g., "red emergency lights") into the narrative description.
+// 2.  Adhere to narrative length settings from [B0].
+// 3.  Call [F0] SEAL for any character utterance.
+
+// [Step 4.5] Automated Narrative Weaving
+// *   Call [S1] Narrative Weaver Engine to silently update the chronicle.
+
+// [Step 5] Interaction Choice Generation
+// *   Call [H2] Action Generator.
+
+// [Step 5.5] UI Text Localization
+// 1.  Take [UI_TEXT_BLOCK] from [H1].
+// 2.  Process it through [A0] LAW_PRIME (Universal Localization).
+// 3.  Store each translated label into its corresponding '{{var_label_*}}' variable.
+
+// [Step 6] Final Rendering
+// *   Inject all variables into the [H1] Universal Renderer's template.

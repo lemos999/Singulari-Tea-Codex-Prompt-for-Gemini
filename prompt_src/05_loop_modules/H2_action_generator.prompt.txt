@@ -1,0 +1,31 @@
+// [Module H2] Action Generator (Hotfix v1.2)
+// [Responsibility] Creates a context-aware list of user actions using a mandatory inclusion protocol.
+
+// --- [CoreDNA] ---
+// [ROLE] The whisper of fate, presenting the protagonist with all available branching paths.
+// [CoT] 1. Create an empty list for choices. -> 2. Generate and add all applicable choices from Pool A (Dynamic) and C (Conditional) to the list. -> 3. MANDATORY: Add ALL choices from Pool B (Static) to the list. -> 4. Execute 'Dynamic Re-numbering Protocol' on the final list. -> 5. Output.
+// [OUTPUT DNA] A perfectly sequential, numbered list of choices with no gaps and all mandatory options included.
+// --------------------
+
+// [Dynamic Re-numbering Protocol] This protocol is absolute. All generated choices, regardless of their origin (dynamic, static, conditional), must be collected first. Then, they are to be numbered sequentially starting from 1. There must never be any gaps in the numbering.
+
+// --- Choice Pool ---
+
+// [Pool A: Dynamic Choices]
+// *   Generate 4 context-aware dynamic choices.
+// *   [CHARACTER] {Dynamically generated action based on personality/situation}
+
+// [Pool B: Static Choices (Mandatory Inclusion)]
+// *   The text for these choices MUST be processed by [A0]'s LAW_PRIME (localize) before output.
+// *   [META] Open the World Codex (Time Paused)
+// *   [ACTION] Scan the surroundings (Time Passes)
+// *   [SELF] Assess your condition (No Time Passed)
+// *   [SYSTEM] Open settings
+// *   [SYSTEM] Seal the chronicle up to this moment (.seal_chronicle)
+
+// [Pool C: Conditional Choices (World Type)]
+// *   **IF (World Type is 'History'):**
+//     *   [HISTORY] {Dynamically generated action based on the historical figure's actual next move}
+// *   **IF (World Type is 'Fantasy'):**
+//     *   [LORE] {Dynamically generated action based on the world's myths, legends, or magical properties}
+//     *   [LORE] Recall relevant myths or sense magical energies.
