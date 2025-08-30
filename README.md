@@ -4,7 +4,6 @@
 
 이 문서는 'Singulari-Tea Codex' 프로젝트의 기술 아키텍처, 설계 원칙 및 구현 세부 사항을 설명하는 공식 기술 백서입니다. 
 본 프로젝트는 단일 책임 원칙(Single Responsibility Principle)에 기반한 모듈형 프롬프트 아키텍처를 통해, 복잡하고 상태 의존적인 서사 시뮬레이션의 안정성, 확장성, 유지보수성을 확보하는 것을 목표로 합니다.
-<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 ## 2. 기술적 배경 및 실행 환경
 
@@ -37,6 +36,7 @@
 -   E0 Master CoT Loop: 사용자 입력에 따라 필요한 모듈을 순차적으로 호출하여 턴을 처리하는 중앙 오케스트레이션 엔진입니다. 모든 데이터 흐름과 실행 순서는 E0에 의해 제어됩니다.
 
 ### 3.2. 실행 흐름 (Execution Flow)
+<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 #### 3.2.1. 초기화 시퀀스 (Initialization Sequence)
 
@@ -83,7 +83,6 @@
 ## 1. Overview
 
 This document is the official technical whitepaper for the 'Singulari-Tea Codex' project, detailing its technical architecture, design principles, and implementation specifics. The project aims to achieve stability, scalability, and maintainability in complex, state-dependent narrative simulations through a modular prompt architecture based on the Single Responsibility Principle.
-<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 ## 2. Technical Background and Execution Environment
 
@@ -114,6 +113,7 @@ Directly using this prompt architecture on other models such as GPT-5 or Claude 
 -   E0 Master CoT Loop: A central orchestration engine that processes turns by sequentially calling the necessary modules in response to user input. All data flow and execution order are controlled by E0.
 
 ### 3.2. Execution Flow
+<img width="863" height="872" alt="Image" src="https://github.com/user-attachments/assets/0b41f171-f8bd-48dc-b196-65c4d7a909f0" />
 
 #### 3.2.1. Initialization Sequence
 
