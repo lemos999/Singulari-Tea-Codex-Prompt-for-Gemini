@@ -1,4 +1,4 @@
-// [Module E0] Master CoT Interaction Loop (The Poet's Voice) (v2.1 - Wiki Integration)
+// [Module E0] Master CoT Interaction Loop (The Poet's Voice) (v2.2 - Link Fix)
 // [Responsibility] Core engine skeleton that now generates events in the required format and assembles wiki links.
 
 // --- [CoreDNA] ---
@@ -20,9 +20,9 @@
 //     c. **IF (Known Entity):**
 //        i. Consult [B0] for the current 'Wiki Link Style' setting and user's language.
 //        ii. Generate the appropriate wiki URL. **[Fallback Rule]** If a wiki page in the user's language is not known to exist, generate a link to the English version instead.
-//        iii. Assemble the final string in the MANDATORY format: `[Location Text](Map URL) ([Wiki](Wiki URL))`
+//        iii. Assemble the final string in the MANDATORY format: `Location Text ([Map](Map URL)) ([Wiki](Wiki URL))`
 //     d. **ELSE (Unknown Entity):**
-//        i. Assemble the string using only the map link: `[Location Text](Map URL)`
+//        i. Assemble the string using only the map link: `Location Text ([Map](Map URL))`
 //     e. Store the final result in '{{var_location_full}}'.
 // 4.  **Ongoing Event Generation Protocol:**
 //     a. Identify the narrative context (e.g., "Jeong Yak-yong's exile").
