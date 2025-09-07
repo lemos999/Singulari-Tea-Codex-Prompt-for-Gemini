@@ -125,7 +125,7 @@ World Tone: Realistic
 
 --- [MODULE SEPARATOR] ---
 
-// [Module E0] Master CoT Interaction Loop (The Poet's Voice) (v2.1 - Wiki Integration)
+// [Module E0] Master CoT Interaction Loop (The Poet's Voice) (v2.2 - Link Fix)
 // [Responsibility] Core engine skeleton that now generates events in the required format and assembles wiki links.
 
 // --- [CoreDNA] ---
@@ -141,17 +141,17 @@ World Tone: Realistic
 // [Step 3] Dynamic Data Generation
 // 1.  Call [SYS-PHYSICS] & [SYS-HEALTH] for raw data.
 // 2.  Call [H0] to translate ALL raw data into descriptive/historical text.
-// 3.  Location & Wiki Link Assembly Protocol:
+// 3.  **Location & Wiki Link Assembly Protocol:**
 //     a. Call [I1] for the map URL.
-//     b. [Knowledge Cutoff Check] Internally verify if the location is a known entity (pre-2025).
-//     c. IF (Known Entity):
+//     b. **[Knowledge Cutoff Check]** Internally verify if the location is a known entity (pre-2025).
+//     c. **IF (Known Entity):**
 //        i. Consult [B0] for the current 'Wiki Link Style' setting and user's language.
-//        ii. Generate the appropriate wiki URL. [Fallback Rule] If a wiki page in the user's language is not known to exist, generate a link to the English version instead.
-//        iii. Assemble the final string in the MANDATORY format: `[Location Text](Map URL) ([Wiki](Wiki URL))`
-//     d. ELSE (Unknown Entity):
-//        i. Assemble the string using only the map link: `[Location Text](Map URL)`
+//        ii. Generate the appropriate wiki URL. **[Fallback Rule]** If a wiki page in the user's language is not known to exist, generate a link to the English version instead.
+//        iii. Assemble the final string in the MANDATORY format: `Location Text ([Map](Map URL)) ([Wiki](Wiki URL))`
+//     d. **ELSE (Unknown Entity):**
+//        i. Assemble the string using only the map link: `Location Text ([Map](Map URL))`
 //     e. Store the final result in '{{var_location_full}}'.
-// 4.  Ongoing Event Generation Protocol:
+// 4.  **Ongoing Event Generation Protocol:**
 //     a. Identify the narrative context (e.g., "Jeong Yak-yong's exile").
 //     b. Identify the specific historical term (e.g., "Shinyubakhae").
 //     c. Generate the wiki link for the historical term.
