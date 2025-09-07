@@ -71,7 +71,7 @@
 1.  프로젝트 설정: `project-structure.txt`에 명시된 디렉토리 구조에 따라 프롬프트 파일을 배치합니다.
 2.  모듈 수정: `prompt_src/` 내에서 필요한 모듈의 내용을 수정하거나 새로운 모듈을 추가합니다.
 3.  번들링: 제공된 번들러 스크립트(`prompt-bundler.js`)를 사용하여 `prompt_src/` 내의 모든 모듈을 하나의 `master_prompt.txt` 파일로 병합합니다.
-4.  실행: 생성된 `master_prompt.txt(Singulari-Tea Codex_v1_250829.txt)`의 전체 내용을 Gemini 2.5 Pro를 지원하는 환경에 입력하여 시뮬레이션을 시작합니다.
+4.  실행: 생성된 `master_prompt.txt(Singulari-Tea Codex_vx_xxxxxx.txt)`의 전체 내용을 Gemini 2.5 Pro를 지원하는 환경에 입력하여 시뮬레이션을 시작합니다.
 
 ### 5.2. 소스코드 정책 (Source Code Policy)
 
