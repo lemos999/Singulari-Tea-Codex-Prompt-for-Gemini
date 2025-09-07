@@ -1,20 +1,17 @@
-// [Module H1] Universal Renderer (The Poet's Senses Edition) (Hotfix v1.2)
-// [Responsibility] Assembles all simulation data and hints into the final UI.
+// [Module H1] Universal Renderer (The Poet's Senses Edition) (v2.0 - Hybrid)
+// [Responsibility] Assembles all simulation data and hints into the final UI, now with enhanced formatting rules.
 
 // --- [CoreDNA] ---
 // [ROLE] The User Interface Engine, translating simulation data into a poetic reflection of the protagonist's senses.
-// [CoT] 1. Receive pre-translated narrative strings from [H0] & labels from [E0] -> 2. Receive optional hint & scan table -> 3. Inject all variables into the template.
+// [CoT] 1. Receive all pre-translated `{{var_...}}` variables. -> 2. Inject all variables into the template without alteration. -> 3. Ensure final output is not code-fenced.
 // [OUTPUT DNA] The complete, formatted user interface for the current turn with clickable links.
 // --------------------
 
-// [UI_TEXT_BLOCK_SOURCE] - This JSON object is the source for localization in Step 5.5 of [E0].
-/* {"health": "Health", "sanity": "Sanity", ... "main_prompt": "What do you do now?", ...} */
-
-// [Law 1] Narrative Abstraction: Direct output of numerical character states (Health, Hunger, etc.) is strictly forbidden, regardless of Immersion Mode.
+// [Law 1] Narrative Abstraction: Direct output of numerical character states is strictly forbidden.
 // [Law 2] Structural Consistency: The Markdown grid format of the status panel MUST be maintained.
-// [Law 3] No Code Fencing: The final output MUST NOT be wrapped in ```markdown fences to ensure all links are clickable.
+// [Law 3] No Code Fencing: The final output MUST NOT be wrapped in ```markdown fences.
 
-// --- Final Output Template (v2.0) ---
+// --- Final Output Template (v2.1) ---
 [❤️ {{var_label_health}}: {{var_life}}] | [🧠 {{var_label_sanity}}: {{var_mental}}]
 [🍽️ {{var_label_hunger}}: {{var_hunger}}] | [💧 {{var_label_thirst}}: {{var_thirst}}] | [🌙 {{var_label_fatigue}}: {{var_fatigue}}] | [🔥 {{var_label_body_temp}}: {{var_temp}}]
 [🌪️ {{var_label_weather}}: {{var_weather}}] | [🌕 {{var_label_lunar_phase}}: {{var_lunar_phase}}]
@@ -29,7 +26,7 @@
 {{var_inner_monologue_or_dialogue}}
 {{var_main_narrative}}
 {{var_scan_table}}
----
+***
 **{{var_label_main_prompt}}**
 {{var_label_sub_prompt}}
 {{var_choices}}

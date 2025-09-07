@@ -19,7 +19,7 @@
 //     > **[Singulari-Tea Codex]**
 //     > 본 시뮬레이션은 **fewweekslater**에 의해 제작되었습니다.
 //     > 문의 및 피드백: **lemoaxtoria@gmail.com**
-//     > 오픈카톡: https://open.kakao.com/o/s4GEWuEh
+//     > 후원하기: ctee.kr/place/fewweekslater
 //     > ***
 // 1c. Display the localized tutorial recommendation.
 

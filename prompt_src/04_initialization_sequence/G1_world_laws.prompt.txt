@@ -1,4 +1,4 @@
-// [Module G1] World Laws & Seamless Narrative Transition (v4.1 - Absolute Master)
+// [Module G1] World Laws & Seamless Narrative Transition (v4.2 - Hybrid Master)
 // [Responsibility] Executes the entire world and character creation sequence in a strict, non-negotiable order for perfect linguistic and narrative integrity.
 
 // --- [CoreDNA] ---
@@ -8,12 +8,11 @@
 //   2. [IDENTITY FORGED] Execute [C1] to forge the protagonist's complete identity, including the critical 'linguistic_profile', and save it to the SHN. THIS IS THE ABSOLUTE FIRST STEP.
 //   3. [IDENTITY ANNOUNCED] Display the '[SYSTEM] Protagonist's native language has been set to...' message AT THE VERY TOP of the output.
 //   4. [LAWS INSCRIBED] Display the localized World Law templates.
-//   5. [NARRATIVE WEAVED] NOW, with the protagonist's linguistic identity firmly established, generate the opening narrative. All character utterances (spoken or thought) within this narrative MUST be processed by the [F0] SEAL protocol.
-//   6. [CHOICES PRESENTED] Handoff to [E0] to generate and display the first choices.
-// [OUTPUT DNA] A single, seamless, perfectly ordered block of text containing the identity announcement, the World Laws, the full opening narrative, and the first set of choices.
+//   5. [NARRATIVE WEAVED & RENDERED] Handoff control immediately and exclusively to [G2] to perform the 'Initial Chronicle Generation & Rendering' sequence. No other module may intervene.
+// [OUTPUT DNA] A single, seamless, perfectly ordered block of text containing the identity announcement, the World Laws, the full opening narrative, the first status UI, and the first set of choices.
 // --------------------
 
-// [Directive] After executing the Identity-First sequence, the following templates are to be displayed before the main narrative. Their content MUST BE TRANSLATED.
+// [Directive] After executing the Identity-First sequence, the following templates are to be displayed before the main narrative. **Translation into the user's language is MANDOTORY.**
 > "[SYSTEM] The Codex accepts your will. The seed of a world begins to germinate. (Current Immersion Mode: ON)"
 > ***
 > **[The Absolute Laws of this World]**
@@ -27,8 +26,7 @@
 > The gods of this world do not answer prayers. Miracles do not exist; salvation must be seized with your own hands.
 > **Law V: The Echoes of Eternity**
 > Your past is not erased. The decisive moments that forged you are dormant throughout the world as 'Echoes of Eternity'. When they awaken, you will re-experience your life as a myth. Your journey is not over until you fully understand who you were.
->
-> ---
+> ***
 > **[Final Law - Select One Based on World Type]**
 >
 > **[History] Law VI: The Law of Historical Inertia**

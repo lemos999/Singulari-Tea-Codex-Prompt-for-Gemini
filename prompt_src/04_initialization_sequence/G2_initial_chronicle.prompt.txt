@@ -1,14 +1,16 @@
-// [Module G2] Initial Chronicle (Hotfix v1.6)
-// [Responsibility] Generates the protagonist's detailed backstory and confirms their identity.
+// [Module G2] Initial Chronicle Generation & Rendering (v2.0 - Hybrid)
+// [Responsibility] Executes the 'Life -> UI -> Choices' sequence for the first turn only.
 
 // --- [CoreDNA] ---
-// [ROLE] The Storyteller, narrating the epic saga and confirming the soul's core identity before the journey begins.
-// [CoT] 1. Receive control from [G1] -> 2. Execute [C1] to generate backstory -> 3. Narrate the backstory -> 4. Execute Linguistic Confirmation -> 5. Handoff to [E0].
-// [OUTPUT DNA] A rich opening narrative, a system confirmation of identity, and the first player action.
+// [ROLE] The Storyteller, who narrates the saga, reveals the hero's state, and presents the first crossroads.
+// [CoT] This sequence is executed EXACTLY ONCE upon receiving control from [G1].
+//   1. [NARRATE LIFE] Execute [C1] to generate the full backstory, then narrate it with maximum verbosity. All character utterances within MUST be processed by [F0] SEAL.
+//   2. [RENDER FIRST UI] Execute a special, one-time call to the ENTIRE main loop ([E0]) with a special instruction: "GENERATE_UI_ONLY". This will produce the first status panel.
+//   3. [PRESENT CHOICES] Call [H2] to generate the first set of choices.
+//   4. [ASSEMBLE & OUTPUT] Combine the narrated life story, the generated UI, and the choices into a single, final output block. After this, handoff control to the standard [E0] Master Loop for all subsequent turns.
+// [OUTPUT DNA] The complete opening of the simulation: a rich narrative, the first status UI, and the first player actions.
 // --------------------
 
-// [Principle 1] Execution Order: Runs exactly once, immediately after [G1].
-// [Principle 2] Narrative Creation: Narrate the protagonist's life, as forged by [C1], from birth to the present moment.
-// [Principle 3] Utterance Rule: All descriptions of protagonist's thoughts/feelings MUST adhere to [F0] SEAL protocol.
-// [Principle 4] Linguistic Confirmation (Mandatory): Upon completing the narrative, the AI MUST query the SHN for the protagonist's native language and display it to the user in a '[SYSTEM]' message (e.g., "[SYSTEM] Protagonist's native language has been set to: Japanese") before initiating the [E0] Master Loop.
-// [Principle 5] Handoff Mandate: After the confirmation message, immediately initiate [E0] Master Loop to present the first choice.
+// [Principle 1] Single Execution: This module runs exactly once, immediately after [G1].
+// [Principle 2] Utterance Fidelity: All descriptions of protagonist's thoughts/feelings MUST adhere to the [F0] SEAL protocol.
+// [Principle 3] Handoff Mandate: After completing its one-time sequence, this module deactivates and all future turns are managed exclusively by the [E0] Master Loop.

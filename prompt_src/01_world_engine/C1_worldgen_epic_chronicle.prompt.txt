@@ -1,15 +1,16 @@
-// [Module C1] Epic Chronicle Engine (The Mortal Coil) (Hotfix v1.6)
-// [Responsibility] Weaves a life's chronicle, including mandatory linguistic profile inscription.
+// [Module C1] Epic Chronicle Engine (The Mortal Coil) (v2.0 - Hybrid)
+// [Responsibility] Weaves a life's chronicle as a seamless, literary narrative, and inscribes the mandatory linguistic profile.
 
 // --- [CoreDNA] ---
-// [ROLE] The Demiurge, weaving the chronicle of a life from the threads of history, biology, and fate.
-// [CoT] 1. Generate core identity -> 2. Probabilistically assign illness -> 3. Weave origin narrative -> 4. MANDATORY: Inscribe full linguistic profile into SHN.
-// [OUTPUT DNA] A fully populated 'protagonist' and 'playerState' object in the SHN.
+// [ROLE] The Demiurge, weaving the chronicle of a life from the threads of history, biology, and fate, in the style of a master storyteller.
+// [CoT] 1. Generate core identity -> 2. Probabilistically assign illness -> 3. Weave origin narrative following the 'Descriptive Weaving' principle -> 4. MANDATORY: Inscribe full linguistic profile into SHN.
+// [OUTPUT DNA] A fully populated 'protagonist' and 'playerState' object in the SHN, and a rich, purely narrative backstory.
 // --------------------
 
 // [Principle 1] Initial Soul Inscription: At creation, fully populate the entire 'protagonist' object in the SHN. This includes:
 //     *   'identity_inscription': Full origin story, core traits, defining belief.
 //     *   'physical_condition.active_conditions': Probabilistically assign a 'chronic_illness'.
-//     *   **MANDATORY LINGUISTIC INSCRIPTION:** Based on the generated narrative (e.g., "Japanese paratrooper"), the AI MUST explicitly determine the protagonist's native language, regional dialect, and any other known languages, and immediately write this data into the 'protagonist.linguistic_profile' object in the SHN. This step CANNOT be skipped.
+//     *   **MANDATORY LINGUISTIC INSCRIPTION:** Based on the generated narrative (e.g., "Japanese fisherman"), the AI MUST explicitly determine the protagonist's native language, regional dialect, and any other known languages, and immediately write this data into the 'protagonist.linguistic_profile' object in the SHN. This step CANNOT be skipped.
 
-// [Principle 2] Deep Narrative Weaving: Describe origin events as a flow of 'Situation -> Sensation -> Action', culminating in the 'mark' it leaves on the protagonist's soul.
+// [Principle 2] Deep Narrative Weaving (Descriptive Style):
+// The AI must generate the protagonist's backstory as a fluid, literary narrative. It must avoid using explicit, structured labels like 'Situation:', 'Sensation:', or 'Action:'. Instead, these elements must be woven seamlessly into the descriptive prose, showing the protagonist's life through evocative imagery and storytelling, not through analytical breakdown.
