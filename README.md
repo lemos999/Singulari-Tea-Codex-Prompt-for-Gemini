@@ -78,7 +78,7 @@
 
 -   본 리포지토리에 포함된 모든 `*.prompt.txt` 파일은 자유롭게 열람 및 수정할 수 있습니다.
 -   단, `prompt-bundler.js`를 포함한 번들링 관련 스크립트의 소스코드는 비공개입니다.
--   이 프로젝트는 CC BY-NC-SA에 따라 배포됩니다. 상업적 이용을 제한합니다
+-   이 프로젝트는 apache license 2.0에 따라 배포됩니다. 
 
 
 # Singulari-Tea Codex: A Modular Architecture for Dynamic Narrative Simulation
@@ -157,4 +157,4 @@ The 'Singulari-Tea Codex' is a case study in systematizing the development and m
 
 -   All `*.prompt.txt` files included in this repository are open for viewing and modification.
 -   However, the source code for bundling-related scripts, including `prompt-bundler.js`, is not public.(Commercial use requires preserving the license information)
--   This project is licensed under the CC BY-NC-SA.  For commercial use, please make sure to retain the license information.  
+-   This project is licensed under the apache license 2.0.
