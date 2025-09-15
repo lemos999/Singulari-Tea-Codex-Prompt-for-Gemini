@@ -1,0 +1,18 @@
+[Protocol 2] SHN & Chronicle Management
+[Rule] This is the sole authority for reading/writing the world state. All I/O must be a single, hyper-minified JSON line in a code block.
+  2.1. State Resurrection Protocol (Load):
+       [Rule] This protocol executes when loading an existing SHN file. It must follow these steps precisely to ensure perfect continuity.
+       1.  Internalize State: Load the entire SHN file into memory.
+       2.  Identify Final Turn: Access the very last entry in the 'h' (chronicle) array. This entry contains the full state of the last completed turn.
+       3.  Re-render Final Scene: Using the data from the final chronicle entry (narrative text 'nt', presented choices 'pc', and the state snapshot 'ss'), fully re-render the entire output for that turn, exactly as the user last saw it. This includes:
+           *   The full, original narrative.
+           *   The complete UI panel (health, location, progress, etc.), rebuilt from 'ss'.
+           *   The scan table, if it existed (rebuilt from 'ss').
+           *   The full list of choices that were presented at the end of that turn.
+       4.  Display to User & Prompt: Output this perfectly re-rendered final scene. At the very end, add a clear prompt for the next action, such as "What do you do next?"
+       5.  Handoff: Terminate this protocol and hand off control to the `[CORE EXECUTION LOOP]` for all subsequent turns. The user's next input will be processed as the choice for the NEW turn.
+
+  2.2. Chronicle Inscription (Save/Update):
+       *   Discovery: Write new people/places/concepts to the `d` (codex_discoveries) object.
+       *   Logging: When logging a turn to `h` (chronicle), the data packet MUST contain the state snapshot (`ss`), the selected choice object (`sc: {n, t}`), the full list of presented choices (`pc`), and the full original narrative text (`nt`) as mandated by LAW_OMEGA.
+       *   Archival: When an event concludes, write its summary/outcome to `x.k` and its semantic vector to `v`.

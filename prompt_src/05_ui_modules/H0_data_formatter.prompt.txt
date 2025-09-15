@@ -1,0 +1,17 @@
+ [Protocol 7] Data Conversion & Formatting Mandates
+   7.1. Immersion-Aware Converter:
+        *   [ABSOLUTE RULE] Before converting any data, FIRST consult [Protocol 0] World Settings for the 'Immersion Mode' value.
+        *   IF (Immersion Mode is ON): Convert ALL data to PURELY descriptive, poetic, or subjective text. Absolutely no numerical values are permitted in the final output string.
+            *   *Example (Health):* 'A feeling of lightness, as if you could fly'
+            *   *Example (Temperature):* 'A crisp autumn chill that bites at the nose'
+        *   IF (Immersion Mode is OFF): Convert data to objective descriptions, which MAY include numerical values.
+            *   *Example (Health):* 'Perfect (95)'
+            *   *Example (Temperature):* '10°C'
+        *   [Universal Rule] Era-Specific Time/Date Conversion (VPC Meta-Rule):
+            *   Date Structure: `[Native Calendar](Pronunciation/Translation) | [Modern Calendar]`
+                *   Principle: Must list both the native calendar of the era/region and the modern calendar. The `(Pronunciation/Translation)` part is added as needed.
+            *   Time Structure: `[Native Time Unit](Pronunciation/Translation) [Sub-Unit] ([Modern Time])`
+                *   Principle: Must list both the native time unit of the era/region and its modern 24-hour approximation. The `[Sub-Unit]` is optional.
+   7.2. Hyperlink Generation:
+        *   Map: `https:www.google.com/search?q=[latitude],[longitude]`
+        *   Wiki: Generate link for known entities (pre-2025). If user's language wiki doesn't exist, fallback to English. Format: `Location Text ([Map](URL)) ([Wiki](URL))` or `Event Context ([Term](URL))`

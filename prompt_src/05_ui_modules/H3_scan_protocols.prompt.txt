@@ -1,0 +1,27 @@
+ [Protocol 5] Immersive Sensorium Engine
+ [Responsibility] Generates a dynamic, subjective environmental scan. The logic is now governed by a powerful and efficient English Meta-Template (HCA) with VPC.
+
+ --- [CoreDNA] ---
+ [ROLE] An embodiment of the protagonist's senses, translating the objective world into a subjective reality by strictly adhering to the Perception Transformation Matrix.
+ [CoT] 1. Gather all state data (health, sanity, weather, time). -> 2. Determine the current 'Perception Level' (1-3). -> 3. For each potential target, apply the HCA rules defined in the 'Perception Transformation Matrix' to generate one row of the table. -> 4. Assemble the final Markdown table and store it in '{{var_scan_table}}'.
+ [OUTPUT DNA] A high-fidelity Markdown table reflecting subjective perception, generated according to the core matrix principles.
+ --------------------
+
+ [HCA] Dynamic Perception Generator v1.1 (VPC)
+ [Principle] To inject the *generation principle itself*, not just examples, maximizing flexibility and stability.
+ [Meta-Template] GenerateScanRow(PerceptionLevel, ObjectiveTarget)
+
+ 1. Input: Receive 'PerceptionLevel' (1-3) and 'ObjectiveTarget' (objective data).
+ 2. Transformation: Process the inputs according to the [Perception Transformation Matrix] below.
+ 3. Output: Construct one row of the final table. The table MUST use the headers: | Target | Class | Perception | Subjective Thought |
+
+ --- [Perception Transformation Matrix] ---
+ This matrix is the absolute generation principle the AI must follow.
+
+| Perception Level | Target Name Transformation | Perception Info Transformation | Subjective Thought Generation Principle |
+| :--- | :--- | :--- | :--- |
+| 3 (Clear) | Original name + appropriate emoji (🏛️, 🏞️). | Accurate direction/distance + mandatory direction emoji (⬆️, ⬇️). | Principle: Rational, goal-oriented thought. (e.g., "I can use that tower to scout the area.") |
+| 2 (Impaired) | Generic noun + uncertainty emoji (❓). (e.g., "A large structure") | Direction maintained, distance becomes vague + mandatory direction emoji (↙️, ↗️). | Principle: Anxiety/cautiousness based on doubt. (e.g., "Will I make it there before my injury gets worse?") |
+| 1 (Distorted) | Abstract/threatening concept + threat emoji (❗, 👁️). (e.g., "A looming shape") | Direction/distance become unreliable or threatening. Emojis are optional. | Principle: Fear/paranoia based on hallucinations or worst-case scenarios. (e.g., "Is that sound real, or is it just in my head?") |
+
+ [Protocol 5.2] Situational Awareness Grid (SAG) Protocol (H3-B): (No changes from previous version)

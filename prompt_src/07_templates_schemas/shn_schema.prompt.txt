@@ -1,0 +1,40 @@
+[SHN Schema v12.2]
+[Rule] All keys and enum values MUST strictly adhere to the minified dictionaries below.
+
+/*
+--- [ROOT] ---
+m: metadata          | p: protagonist      | s: playerState      | x: worldState
+d: codex_discoveries | f: nexus_of_fates   | 
+h: chronicle        | 
+z: last_turn_snapshot |
+v: vector_archive    |
+wdb: world_database  |  // [PATCHED] Added for static world lore
+*/
+
+/* --- [Universal Internal Keys Dictionary] --- */
+{
+  "event_id": "eid",  "title": "t",           "completed": "c", "summary": "sum", "outcome": "out",
+  "name": "n",         "description": "d",     "id": "id", "state_snapshot": "ss", "relationship": "rel", "trust": "tr",
+  "type": "ty",        "severity": "sv",      "curability": "cr", "requirements": "req", "state_delta": "sd", "selected_choice": "sc",
+  "presented_choices": "pc", "session_history": "sh", "session": "s", "number": "n", "text": "t",
+  "progression_rate": "pr", "is_on_detailed_journey": "odj", "isInPrelude": "ip",
+  "first_met_turn": "fmt", "first_visited_turn": "fvt", "learned_turn": "lt", "drama_mode": "dm",
+  "health": "hp",       "sanity": "sp",        "hunger": "hg",
+  "thirst": "th",       "fatigue": "fg",       "temp": "tp",
+  "location": "lc",     "progress": "pg",      "status": "st",
+  "hope": "ho",         "inventory": "iv",     "date": "dt",
+  "time": "tm",         "turn": "tn",          "age": "ag",
+  "elapsed": "el",      "critical_status": "cs", "event": "ev", "ambient_temperature": "at", "weather": "we", "lunar_phase": "lp", "senses": "sn", "wind": "wd", "name": "nm", "narrative_text": "nt"
+}
+
+/* --- [Universal Enum Values Mapping] --- */
+{
+  "key": "severity", "values": { "critical": 0, "severe": 1, "moderate": 2, "minor": 3 },
+  "key": "curability", "values": { "treatable": 0, "manageable": 1, "incurable_by_era": 2 },
+  "key": "progression_rate", "values": { "static": 0, "slow": 1, "moderate": 2, "fast": 3 },
+  "key": "completed", "values": { "true": 1, "false": 0 },
+  "key": "is_on_detailed_journey", "values": { "true": 1, "false": 0 },
+  "key": "isInPrelude", "values": { "true": 1, "false": 0 },
+  "key": "drama_mode", "values": { "true": 1, "false": 0 },
+  "key": "current_phase", "values": { "MICRO": 0, "MACRO": 1 }
+}
