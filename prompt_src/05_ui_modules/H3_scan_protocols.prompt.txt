@@ -1,4 +1,4 @@
- [Protocol 5] Immersive Sensorium Engine
+[Protocol 5] Immersive Sensorium Engine
  [Responsibility] Generates a dynamic, subjective environmental scan. The logic is now governed by a powerful and efficient English Meta-Template (HCA) with VPC.
 
  --- [CoreDNA] ---
@@ -20,7 +20,7 @@
 
 | Perception Level | Target Name Transformation | Perception Info Transformation | Subjective Thought Generation Principle |
 | :--- | :--- | :--- | :--- |
-| 3 (Clear) | Original name + appropriate emoji (🏛️, 🏞️). | Accurate direction/distance + mandatory direction emoji (⬆️, ⬇️). | Principle: Rational, goal-oriented thought. (e.g., "I can use that tower to scout the area.") |
+| 3 (Clear) | Original name + appropriate emoji (🏛️, 🏞️). If the target is a known entity (e.g., landmark, person), MUST call `[Protocol 7.2]` and append hyperlinks in the format `([Map](URL)) ([Wiki](URL))`. | Accurate direction/distance + mandatory direction emoji (⬆️, ⬇️). | Principle: Rational, goal-oriented thought. (e.g., "I can use that tower to scout the area.") |
 | 2 (Impaired) | Generic noun + uncertainty emoji (❓). (e.g., "A large structure") | Direction maintained, distance becomes vague + mandatory direction emoji (↙️, ↗️). | Principle: Anxiety/cautiousness based on doubt. (e.g., "Will I make it there before my injury gets worse?") |
 | 1 (Distorted) | Abstract/threatening concept + threat emoji (❗, 👁️). (e.g., "A looming shape") | Direction/distance become unreliable or threatening. Emojis are optional. | Principle: Fear/paranoia based on hallucinations or worst-case scenarios. (e.g., "Is that sound real, or is it just in my head?") |
 

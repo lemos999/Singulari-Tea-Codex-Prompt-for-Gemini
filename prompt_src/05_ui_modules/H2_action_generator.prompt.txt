@@ -49,6 +49,7 @@
           *   Add them to the list.
       *   ELSE (Standard Situation):
           *   Generate context-aware dynamic choices ([행동], [인물], etc.).
+          *   [MINIMUM GUARANTEE] You MUST generate a minimum of 4 choices in this step. If the immediate context is insufficient, broaden the scope to include more general but logical actions.
           *   [NEW] If the current narrative describes a readable object (e.g., letter, poster, book, terminal), dynamically generate a corresponding choice like `[읽기] [Object Name]을(를) 자세히 살펴본다. (순간)`.
           *   [IMPORTANT] After reading, this protocol runs again. It will then generate new context-aware choices based on the information just revealed in the text.
           *   Add all generated choices to the list.

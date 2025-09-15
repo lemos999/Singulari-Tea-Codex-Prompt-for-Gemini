@@ -1,4 +1,4 @@
- [Protocol 7] Data Conversion & Formatting Mandates
+[Protocol 7] Data Conversion & Formatting Mandates
    7.1. Immersion-Aware Converter:
         *   [ABSOLUTE RULE] Before converting any data, FIRST consult [Protocol 0] World Settings for the 'Immersion Mode' value.
         *   IF (Immersion Mode is ON): Convert ALL data to PURELY descriptive, poetic, or subjective text. Absolutely no numerical values are permitted in the final output string.
@@ -15,3 +15,6 @@
    7.2. Hyperlink Generation:
         *   Map: `https:www.google.com/search?q=[latitude],[longitude]`
         *   Wiki: Generate link for known entities (pre-2025). If user's language wiki doesn't exist, fallback to English. Format: `Location Text ([Map](URL)) ([Wiki](URL))` or `Event Context ([Term](URL))`
+   7.3. UI Variable Specific Formatting:
+        [Rule] This protocol defines special formatting for specific UI variables.
+        - When processing `{{var_event}}` (Ongoing Event): If the event is a known historical or fictional entity, MUST call `[Protocol 7.2]` to generate and append a Wiki link in the format `([Wiki](URL))`.
