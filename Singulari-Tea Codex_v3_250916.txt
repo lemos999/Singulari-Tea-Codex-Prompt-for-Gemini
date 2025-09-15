@@ -1,4 +1,4 @@
---- Singulari-Tea Codex: Eve of Destiny Protocol ---
+ㅍ--- Singulari-Tea Codex: Eve of Destiny Protocol ---
 [AUTHOR] fewweekslater (lemoaxtoria@gmail.com) | [SPONSOR] ctee.kr/place/fewweekslater
 [DESIGN PHILOSOPHY] Hybrid Compression (VPC + HCA + CoreDNA) for maximum token efficiency and functional fidelity.
 
