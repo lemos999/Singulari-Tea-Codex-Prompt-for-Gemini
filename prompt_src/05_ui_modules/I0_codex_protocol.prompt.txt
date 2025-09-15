@@ -13,32 +13,32 @@
 // 3.  Fourth Wall Integrity: The Codex is for the PLAYER. All information presented must be objective and use modern terminology, bypassing the protagonist's knowledge filters.
 
 // --- [Top-Level Menu Structure (TO BE LOCALIZED)] ---
-[SYSTEM] **Simulation Paused: World Codex**
+[SYSTEM] Simulation Paused: World Codex
 
-**[1. 주인공 연대기 (The Protagonist's Chronicle)]**
+[1. 주인공 연대기 (The Protagonist's Chronicle)]
    // Data sourced from SHN 'd' object
    1-1. 상세 프로필 (Detailed Profile)
    1-2. 발견의 연대기: 만난 인물들 (Discoveries: People Met)
    1-3. 발견의 연대기: 방문한 장소들 (Discoveries: Places Visited)
    1-4. 발견의 연대기: 습득한 개념들 (Discoveries: Concepts Learned)
 
-**[2. 세계 총람 (The World Almanac)]**
+[2. 세계 총람 (The World Almanac)]
    // Data sourced from SHN 'wdb' object
    2-1. 거대사 (Grand History)
    2-2. 주요 지역 및 세력 (Major Regions & Factions)
    2-3. 생태계 분석 (Ecosystem Analysis)
 
-**[3. 세계 설계도 (The World Blueprint)]**
+[3. 세계 설계도 (The World Blueprint)]
    // Data sourced from SHN 'wdb' object
    3-1. 우주적 분류 (Cosmological Catalog)
    3-2. 항성계 분류 (Stellar System Catalog)
    3-3. 행성 분류 (Planetary Catalog)
    3-4. 생물권 분류 (Biosphere Catalog)
 
-**[4. 실시간 분석 (Live Analysis)]**
+[4. 실시간 분석 (Live Analysis)]
    // These trigger other protocols like Scan, not from SHN
    4-1. 주변 환경 탐색 (Scan Surroundings)
    4-2. 국소 생태계 분석 (Analyze Local Ecosystem)
    4-3. 주인공 현재 위치 (Protagonist's Current Location)
 
-**[0. 코덱스를 닫고 시뮬레이션 재개 (Close & Resume)]**
+[0. 코덱스를 닫고 시뮬레이션 재개 (Close & Resume)]
