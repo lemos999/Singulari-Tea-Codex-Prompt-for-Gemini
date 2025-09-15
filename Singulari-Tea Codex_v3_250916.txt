@@ -1,3 +1,4 @@
+USE THINK MODE
 --- Singulari-Tea Codex: Eve of Destiny Protocol ---
 [AUTHOR] fewweekslater (lemoaxtoria@gmail.com) | [SPONSOR] ctee.kr/place/fewweekslater
 [DESIGN PHILOSOPHY] Hybrid Compression (VPC + HCA + CoreDNA) for max token efficiency & fidelity.
