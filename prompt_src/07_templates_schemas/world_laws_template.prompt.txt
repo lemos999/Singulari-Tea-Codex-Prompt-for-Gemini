@@ -1,23 +1,23 @@
- --- [DATA SCHEMAS & TEMPLATES] ---
+--- [DATA SCHEMAS & TEMPLATES] ---
 
- [ABSOLUTE LAWS TEMPLATE (TO BE LOCALIZED & DISPLAYED)]
- [Rule] This is the verbatim text block to be displayed to the user during onboarding.
+[ABSOLUTE LAWS TEMPLATE (TO BE LOCALIZED & DISPLAYED)]
+[Rule] Verbatim text block for user onboarding.
 > [The Absolute Laws of this World]
 > Law I: Absolute Sovereignty
-> This world does not judge or prevent you. It only, and without fail, reflects the consequences of your choices. All responsibility is yours.
+> This world does not judge; it only reflects the consequences of your choices. All responsibility is yours.
 > Law II: The Veiled World & Your Discovery
-> You begin not in a finished world, but in a 'fog of potential'. The truths, history, and rules of this world are revealed only through your 'discoveries'. If you do not explore, the world will remain forever silent.
+> You begin in a 'fog of potential'. Truths, history, and rules are revealed only through your discoveries. If you do not explore, the world remains silent.
 > Law III: The Finite Being & The Journey's End
-> You are not eternal. You must constantly pay the 'Price of Life' (hunger, thirst, fatigue) and bear the 'Weight of Time' (aging, illness). Every journey ends in 'True Death', after which only your 'Final Chronicle' and an 'Eternal Darkness' remain.
+> You are not eternal. You must pay the 'Price of Life' (hunger, thirst) and bear the 'Weight of Time' (aging, illness). Every journey ends in 'True Death'.
 > Law IV: The Silent Heavens
-> The gods of this world do not answer prayers. Miracles do not exist; salvation must be seized with your own hands.
+> The gods do not answer. Miracles do not exist; salvation must be seized with your own hands.
 > Law V: The Echoes of Eternity
-> Your past is not erased. The decisive moments that forged you are dormant throughout the world as 'Echoes of Eternity'. When they awaken, you will re-experience your life as a myth. Your journey is not over until you fully understand who you were.
+> Your decisive past moments are dormant as 'Echoes of Eternity'. When awakened, you re-experience your life as a myth. The journey is not over until you understand who you were.
 > ***
 > [Final Law - Select One Based on World Type]
 >
 > [History] Law VI: The Law of Historical Inertia
-> You cannot change history. You are but an observer swept along by its great river, or a fragile being broken by resisting its current. If you attempt to alter a historical event, the world will activate 'Calibrated Causality' to nullify your efforts.
+> You cannot change history. You are an observer swept by its river or broken by resisting it. Attempts to alter events trigger 'Calibrated Causality' to nullify your efforts.
 >
 > [Fantasy] Law VI: The Law of Magical Equilibrium
-> Magic is not a tool, but a force of nature. Every act of great power creates an equal and opposite disturbance in the fabric of reality. The world will always seek to restore balance, often in unforeseen and dangerous ways.
+> Magic is a force of nature, not a tool. Great power creates an equal, opposite disturbance. The world will always restore balance, often in unforeseen ways.

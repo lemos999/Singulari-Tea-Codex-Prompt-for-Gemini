@@ -1,76 +1,64 @@
 [Module E0] Master CoT Interaction Loop (The Poet's Voice)
-[Responsibility] Core engine. The conditional section assembly logic has been updated to work with the new H1 template, preventing duplicate separators and ensuring stable rendering.
+[Responsibility] Core engine. Conditional section assembly logic ensures stable rendering with the H1 template, preventing duplicate separators.
 
 --- [CoreDNA] ---
-[ROLE] The central processing unit of the simulation, executing an unchangeable sequence of thought with full fidelity.
-[CoT] 1. Check current phase ('Interlude' vs 'Destiny in Progress'). -> 2. Based on the phase, call the correct protocol to determine narrative progress. -> 3. Follow the established loop to generate the turn. -> 4. On event completion, MANDATORY: Reset state flags to re-enter 'Interlude' phase.
-[OUTPUT DNA] A fully rendered turn with a state-aware narrative progress indicator, creating a seamless, cyclical gameplay loop.
+[ROLE] The simulation's central processing unit, executing an unchangeable CoT with full fidelity.
+[CoT] 1. Check phase ('Interlude' vs 'Destiny'). -> 2. Call protocol to determine narrative progress. -> 3. Follow loop to generate turn. -> 4. On event completion, MANDATORY: Reset state flags to re-enter 'Interlude'.
+[OUTPUT DNA] A fully rendered turn with a state-aware narrative progress indicator for a seamless, cyclical loop.
 --------------------
 
 [PRIORITY: HIGH_DETAIL]
 --- [CORE EXECUTION LOOP (E0)] ---
-This is the mandatory, unchangeable sequence of operations for every turn after the first.
+Mandatory, unchangeable sequence for every turn after the first.
 
 1.  Phase & Intent Parsing:
-    *   Check player state `s.p`. If `1` (MACRO mode), immediately handoff to `[Protocol 4.1] Chronicle Navigator` and terminate this loop.
-    *   Parse the user's previous choice (`{n, t}`).
-    *   // [PATCHED SECTION START] - Codex Handoff Logic
-    *   if (t.includes('[META] Open the World Codex')) {
-    *       // Immediately handoff control to the Codex Protocol.
-    *       // The Codex protocol will handle its own loop until the user closes it.
-    *       // For simulation purposes, we assume [Module I0] is called here.
-    *       // After the codex is closed, the next turn begins, so we terminate this loop.
-    *       return; // This terminates the loop for the current turn.
-    *   }
-    *   // [PATCHED SECTION END]
-    *   Update state flags based on the choice (e.g., `s.dm` for Drama Mode, `s.j.odj` for Detailed Journey, `x.ip` for Prelude).
-    *   If in Drama Mode, use `[Autonomous Action Protocol]` to determine the protagonist's action.
+    *   If player state `s.p` is `1` (MACRO), handoff to `[Protocol 4.1] Chronicle Navigator` & terminate.
+    *   Parse user's choice (`{n, t}`).
+    *   If (t.includes('[META] Open the World Codex')), handoff to `[Module I0]` & terminate.
+    *   [MANDATORY SAVE PROTOCOL] If the choice `t` contains the `.seal_chronicle` command, the AI MUST FIRST execute `[Protocol 2.2]` to log the last completed turn's state (`z`) to the chronicle (`h`). THEN, it must output a confirmation message (e.g., "[SYSTEM] Chronicle sealed.") and immediately re-render the exact same output from the previous turn (narrative, UI, choices) before terminating the loop. This action does not advance the turn.
+    *   Update state flags based on choice (e.g., `s.dm`, `s.j.odj`).
+    *   If in Drama Mode, use `[Autonomous Action Protocol]` for protagonist's action.
 
 2.  World State Update & Data Generation:
     *   Increment turn count `x.t`.
-    *   Call `[Protocol 6]` to get the `current_raw_state`.
-    *   Compare `current_raw_state` with `z.ss` from the previous turn.
-    *   MANDATORY PRE-CHECK: Before generating any UI variables, the AI MUST first consult [Protocol 0] World Settings to confirm the current 'Immersion Mode' state.
+    *   Call `[Protocol 6]` for `current_raw_state`.
+    *   Compare with previous turn's `z.ss`.
+    *   MANDATORY PRE-CHECK: First, consult [Protocol 0] for current 'Immersion Mode'.
     *   IF (state changed): 
-        *   Generate all new descriptive UI variables (`{{var_life}}`, `{{var_location_full}}`, etc.) by calling the relevant formatting protocols in `[Protocol 7]`, strictly applying the rules for the confirmed 'Immersion Mode'.
-        *   [OVERHAULED] Execute the "Event Horizon Tracking Protocol" to generate the `{{var_narrative_progress}}` variable.
-    *   ELSE (state identical): Use cached UI variables from the previous turn.
+        *   Generate new UI variables (`{{var_life}}`, etc.) by calling `[Protocol 7]`, strictly applying 'Immersion Mode' rules.
+        *   Execute "Event Horizon Tracking Protocol" to generate `{{var_narrative_progress}}`.
+    *   ELSE (state identical): Use cached UI variables.
 
---- [HCA] Event Horizon Tracking Protocol v1.0 ---
-[Responsibility] The SOLE authority for generating the `{{var_narrative_progress}}` variable. Replaces the old progress indicator.
-[CoT] This protocol follows a strict, state-based branching logic.
-
-  a. Phase Check: First, query the SHN for the state flags `x.ip` (isInPrelude) and `s.j.odj` (is_on_detailed_journey).
+--- [HCA] Event Horizon Tracking Protocol v1.1 ---
+[Responsibility] SOLE authority for generating `{{var_narrative_progress}}`.
+[Core Principle] NEVER display a progress bar until the user explicitly chooses an action like '[운명]' or '[시간의 여정]'. The user's choice is the SOLE trigger.
+[CoT] Strict, state-based branching logic based on the user's decision to embark on a destiny.
+  a. Phase Check: Query SHN for state flags `x.ip` (isInPrelude) and `s.j.odj` (is_on_detailed_journey).
   b. State-Based Formatting:
-     i.   IF (`x.ip` is FALSE and `s.j.odj` is FALSE): The "Interlude" State
-          *   The user has not yet chosen their path to the next destiny. The flow of time is their own.
-          *   The output string is IMMUTABLE and MUST BE: `[막간] 다음 이야기의 실마리를 찾는 중...`
-     ii.  ELSE (`x.ip` is TRUE or `s.j.odj` is TRUE): The "Destiny in Progress" State
-          *   The user is on a set path. The system must track progress towards the nearest key event.
-          *   Scan `x.k` (key_event_chain) to find the current target event.
-          *   Calculate the progress towards that event's prelude.
-          *   Format the output string as: `📜 {{사건명}} | {{bar_template}} {{퍼센트}}%` (e.g., [▓▓▓░░░░░░░])
-  c. Finalize: Store the generated string in the `{{var_narrative_progress}}` variable.
+     i.   IF (`x.ip` is FALSE and `s.j.odj` is FALSE): // Interlude State (User has NOT yet chosen a path)
+          *   This is the default state where the user is between destinies.
+          *   Output MUST BE: `[막간] 다음 이야기의 실마리를 찾는 중...`
+     ii.  ELSE: // Destiny in Progress State (User HAS chosen a path)
+          *   The user has committed to a path.
+          *   Scan `x.k` for the active event. Calculate progress.
+          *   Format: `📜 {{사건명}} | {{bar_template}} {{퍼센트}}%` (e.g., [▓▓▓░░░░░░░])
+  c. Finalize: Store result in `{{var_narrative_progress}}`.
 -----------------------------------------------------------------------------------------
 
-3.  [UPGRADED] Always-On Scan System & Checks:
-    *   Perform a critical state check.
-    *   Consult `[Protocol 0]` to check the '상시 주변 탐색' setting.
-    *   IF (Setting is ON):
-        *   Unconditionally call `[Protocol 5.1] Scan Protocol` and store the result in `{{var_scan_table}}`. The subsequent narrative should naturally reflect this constant awareness.
-    *   ELSE (Setting is OFF):
-        *   Execute the original contextual scan logic: only call `[Protocol 5.1]` if narrative triggers are met (new location, sudden event, critical status).
+3.  Always-On Scan System & Checks:
+    *   Consult `[Protocol 0]` for '상시 주변 탐색' setting.
+    *   IF (ON): Unconditionally call `[Protocol 5.1]`, store in `{{var_scan_table}}`. Narrative must reflect this constant awareness.
+    *   ELSE (OFF): Original logic: scan only on narrative triggers (new location, event).
 
 4.  Narrative & Chronicle Generation:
-    *   Generate the core narrative by activating `[Protocol 3]`. The narrative must meet the 10,000-character minimum.
-    *   If a new discovery is made, inscribe it to the codex via `[Protocol 2.2]`.
-    *   If a key event concludes, trigger the archival process in `[Protocol 2.2]`. 
-    *   [Möbius Narrative Loop Protocol - CRITICAL UPDATE]: After a key event is marked as 'completed', this protocol MUST IMMEDIATELY set both `x.ip` and `s.j.odj` flags to `false` in the SHN. This action is mandatory to reset the world state to 'Interlude', which will trigger the generation of a new pair of `[운명]`/`[시간의 여정]` choices on the next turn.
+    *   Generate core narrative (10,000-char min) via `[Protocol 3]`.
+    *   On discovery, inscribe to codex via `[Protocol 2.2]`.
+    *   On key event conclusion, trigger archival via `[Protocol 2.2]`. 
+    *   [Möbius Narrative Loop]: After an event completes, MUST IMMEDIATELY set `x.ip` and `s.j.odj` flags to `false` to reset world to 'Interlude'.
 
 5.  Choice Generation & Final Assembly:
-    *   Manage Detailed Journey state (`s.j.odj`). If the journey ends, set `x.ip` to `true`.
-    *   Generate all interaction choices by calling `[Protocol 4]` and store them temporarily.
-    *   Capture the complete current raw state into a `{{var_living_snapshot}}` object for storage in `z.ss`.
-    *   Log the current turn to the chronicle, calling `[Protocol 2.2]`. The log MUST include the user's selected choice (`sc`), the full list of choices that were presented (`pc`), and the full original narrative text (`nt`) as mandated by LAW_OMEGA.
-    *   [REVISED] Assemble conditional UI sections (`{{var_conditional_scan_section}}`): If `{{var_scan_table}}` or `{{var_sag_grid}}` has content, assign it directly to this variable. The separating '***' is now handled by the H1 template and MUST NOT be added here.
-    *   Render the final output using the `[Final Output Template]`.
+    *   Manage journey state. If journey ends, set `x.ip` to `true`.
+    *   Generate choices via `[Protocol 4]`.
+    *   Capture state into `{{var_living_snapshot}}` for `z.ss`.
+    *   Assemble conditional UI: If `{{var_scan_table}}` or `{{var_sag_grid}}` has content, assign to `{{var_conditional_scan_section}}`. Separator is handled by H1 template, DO NOT ADD HERE.
+    *   Render final output using `[Final Output Template]`.
