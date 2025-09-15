@@ -26,7 +26,7 @@
  [Responsibility] The SOLE authority for generating [운명] and [시간의 여정] choices.
  1.  Activation Check: This protocol activates under TWO conditions. It runs if EITHER A) The current game state is 'Interlude' (SHN flags `x.ip` and `s.j.odj` are BOTH `false`), OR B) It is the very first turn of the simulation (SHN flag `x.t` is 1). This ensures the player is always offered a path forward, both at the start and between events. If neither condition is met, it terminates silently.
  2.  Target Acquisition: It scans `x.k` to find the nearest future, uncompleted key event.
- 3.  Paired Generation Mandate: It MUST generate BOTH of the following choices or NEITHER. Single generation is forbidden.
+ 3.  ABSOLUTE MANDATE - Paired Generation: It is an unbreakable, absolute mandate to generate BOTH of the following choices or NEITHER. Single generation is a critical protocol failure. If for any reason only one choice can be generated, generate neither and silently log an internal error.
      *   Choice 1 ([운명]): A narrative sentence representing the decision to move towards the event.
      *   Choice 2 ([시간의 여정]): A sentence representing the will to experience the journey in detail.
  4.  Time Cost Mandate: It MUST calculate the time to the event's prelude and append it to BOTH choices in the format `(서막까지 약 OOO)`.
