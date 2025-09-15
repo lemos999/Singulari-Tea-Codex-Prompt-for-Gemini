@@ -14,10 +14,16 @@
            *   Generation Principle: The `[Era-Specific Formatted Time]` part is constructed by pairing numerical values with the string names from the `wdb.chronology_profile.time_units` array. Simply stating 'morning' or 'afternoon' is a critical failure.
            *   Structural Blueprint (Mandatory): The output string MUST be constructed by iterating through the `time_units` array and concatenating the corresponding numerical time values with the unit names. The blueprint to follow is: `"[Value for time_units[0]] [time_units[0]] [Value for time_units[1]] [time_units[1]] ..."` This is a formula for construction, not a specific example.
 
-  7.2. Hyperlink Generation:
-       *   Map: `https:www.google.com/search?q=[latitude],[longitude]`
-       *   Wiki: For known entities (pre-2025). Fallback to English if local wiki absent.
-       *   Format: `Location ([Map](URL)) ([Wiki](URL))` or `Event ([Term](URL))`
-
-  7.3. UI Variable Specific Formatting:
-       [Rule] When processing `{{var_event}}`, if it's a known entity, MUST call `[Protocol 7.2]` to append a Wiki link: `([Wiki](URL))`.
+  7.2. Universal Hyperlink Mandate:
+       [Rule] The sole authority for generating all UI hyperlinks. This protocol MUST be followed absolutely.
+       1.  Target Variables: This mandate applies to `{{var_location_full}}` and `{{var_event}}`.
+       2.  Mandatory Generation Logic (Paired Principle):
+           *   The logic applies equally to any entity (location, event, etc.).
+           *   Priority 1 (Map): IF the entity has identifiable geographic coordinates, a `map` hyperlink MUST be generated.
+           *   Priority 2 (Wiki): IF the entity is a known concept (pre-2025), a `wiki` hyperlink MUST be generated.
+           *   [ABSOLUTE LAW] These checks are independent. If both conditions are met, both hyperlinks MUST be generated and displayed together as a pair.
+       3.  Absolute Formatting Law: The entity name itself MUST be displayed as plain text. Hyperlinks are to be appended after the name, with the link applied to specific keywords within parentheses (e.g., `map`, `wiki`). The raw URL address itself MUST NEVER be visible.
+           *   *Meta-Template (Map link only):* `[Location Name] ([map](URL))`
+           *   *Meta-Template (Wiki link only):* `[Event Name] ([wiki](URL))`
+           *   *Meta-Template (Both available):* `[Entity Name] ([map](URL)) ([wiki](URL))`
+           *   *Critical Failure (Incorrect Formats):* `[[Entity Name]](URL)` OR `[Entity Name] (URL)`
