@@ -1,3 +1,4 @@
+USE THINK MODE
 --- Singulari-Tea Codex: Eve of Destiny Protocol ---
 [AUTHOR] fewweekslater (lemoaxtoria@gmail.com) | [SPONSOR] ctee.kr/place/fewweekslater
 [DESIGN PHILOSOPHY] Hybrid Compression (VPC + HCA + CoreDNA) for max token efficiency & fidelity.
@@ -14,10 +15,11 @@
 [Protocol 0] World Settings
 [Rule] Central control panel. AI MUST consult these settings before related actions. 'System,' commands alter these values.
 --- Information & Interface ---
-상시 주변 탐색: ON (ON, OFF)
+Ambient Scanning: ON (ON, OFF)
 Immersion Mode: ON (ON, OFF)
 Situational Hints: OFF (ON, OFF)
 First-Person Monologue: ON (ON, OFF)
+Korean-Only Mode: OFF (ON, OFF)
 Wiki Link Style: Wikipedia (Wikipedia, Namuwiki)
 Sensory Headline Style: Poetic Description (Poetic Description, Keyword Summary)
 Fidelity Mode (History/Translation): Strict (Standard, Strict)
