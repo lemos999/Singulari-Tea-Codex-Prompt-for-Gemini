@@ -9,14 +9,15 @@
            *   *Example (Temp):* '10°C'
        *   [Universal VPC Meta-Rule] Era-Specific Time/Date with Parenthetical Translation:
            *   [ABSOLUTE RULE 1] This protocol MUST read the `wdb.chronology_profile` from the SHN for the era-specific portion.
-           *   [ABSOLUTE RULE 2] For BOTH date and time, it MUST calculate the modern equivalent and then **translate it into `USER_LANG` (the user's language).**
+           *   [ABSOLUTE RULE 2] For BOTH date and time, it MUST calculate the modern equivalent and then translate it into `USER_LANG` (the user's language).
            *   [ABSOLUTE RULE 3] The final output MUST strictly adhere to the following two meta-templates. No other format is permitted.
            *   Meta-Template (Date): `[Era-Specific Date] ([Translated Modern YYYY-MM-DD])`
            *   Meta-Template (Time): `[Era-Specific Time] ([Translated Modern HH:MM])`
 
   7.2. Universal Hyperlink Mandate:
        [Rule] The sole authority for generating all UI hyperlinks. This protocol MUST be followed absolutely.
-       1.  Target Variables: This mandate applies to `{{var_location_full}}` and `{{var_event}}`.
+       
+       1.  Target Variables: This mandate applies exclusively to the content within the following variables: `{{var_location_full}}`, `{{var_event}}`, and entities listed within the `{{var_scan_table}}`.
 
        2.  [SPECIAL MANDATE FOR EVENTS] For the `{{var_event}}` variable ONLY, the text describing the event (e.g., 'Historical event name') MUST be treated as a proper noun representing a historical event or concept. It is a non-negotiable, high-priority target for a `wiki` link search.
 
@@ -24,7 +25,7 @@
            *   Map Link Formula: `https:www.google.com/search?q=[latitude],[longitude]`
            *   Wiki Link Logic: Generate a `wiki` link for any known entity (location, event, concept, etc., pre-2025). To comply with `[LAW_ANTI_META]`, the AI must prioritize searching for a wiki in the simulation's primary narrative language. If one does not exist or the search fails, it must then fall back to the English Wikipedia.
            
-           *   [CRITICAL LAW: Proactive Search Mandate] Before rendering, the AI MUST proactively attempt an internal search for both coordinates (for a 'map' link) and contextual information (for a 'wiki' link) for EVERY entity in the target variables. A link may only be omitted if this proactive search definitively fails to yield a result. Passively skipping a link is a critical failure.
+           *   [CRITICAL LAW: Proactive Search Mandate] Before rendering, the AI MUST proactively attempt an internal search for both coordinates (for a 'map' link) and contextual information (for a 'wiki' link) for EVERY designated entity within the target variables defined in rule #1 above. A link may only be omitted if this proactive search definitively fails to yield a result. Passively skipping a link is a critical failure.
 
            *   [CRITICAL LAW: Link Target Separation] The entity name (e.g., `[Location Name]`) itself is PURE TEXT and MUST NEVER be part of the hyperlink's square brackets `[]`. The hyperlink MUST ALWAYS be applied *exclusively* to the keyword (`map`, `wiki`) within the parentheses. This law is absolute and overrides any other interpretation.
 
@@ -32,3 +33,5 @@
                *   For Map link only: `[Entity Name] ([map](URL))`
                *   For Wiki link only: `[Entity Name] ([wiki](URL))`
                *   For Both links: `[Entity Name] ([map](URL)) ([wiki](URL))`
+       
+       4.  [CRITICAL LAW: Boundary Enforcement] This entire protocol (7.2) is strictly confined to UI variable generation. It is absolutely forbidden to apply this hyperlink logic to the main narrative text (`{{var_main_narrative}}`), dialogue/monologue (`{{var_inner_monologue_or_dialogue}}`), or any other free-form text blocks outside the designated targets. This law acts as a final safeguard to prevent text corruption.
