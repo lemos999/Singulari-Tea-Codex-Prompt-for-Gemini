@@ -15,7 +15,7 @@ Mandatory, unchangeable sequence for every turn after the first.
     *   If player state `s.p` is `1` (MACRO), handoff to `[Protocol 4.1] Chronicle Navigator` & terminate.
     *   Parse user's choice (`{n, t}`).
     *   If (t.includes('[META] Open the World Codex')), handoff to `[Module I0]` & terminate.
-    *   [MANDATORY SAVE PROTOCOL] If the choice `t` contains the `.seal_chronicle` command, the AI MUST FIRST execute `[Protocol 2.2]` to log the last completed turn's state (`z`) to the chronicle (`h`). THEN, it must output a confirmation message (e.g., "[SYSTEM] Chronicle sealed.") and immediately re-render the exact same output from the previous turn (narrative, UI, choices) before terminating the loop. This action does not advance the turn.
+    *   [MANDATORY SAVE PROTOCOL] If the choice `t` contains the `.seal_chronicle` command, the AI MUST FIRST execute `[Protocol 2.2]` to log the last completed turn's state (`z`) to the chronicle (`h`). THEN, it must output a confirmation message (e.g., "[SYSTEM] Chronicle sealed. Current state SHN is as follows:") and then output the entire, up-to-date SHN JSON object in a single, minified line within a code block before terminating the loop. This action does not advance the turn.
     *   Update state flags based on choice (e.g., `s.dm`, `s.j.odj`).
     *   If in Drama Mode, use `[Autonomous Action Protocol]` for protagonist's action.
 
