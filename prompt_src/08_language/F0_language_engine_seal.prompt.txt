@@ -38,14 +38,14 @@
 
    a. IF (`NATIVE_LANG` string is identical to `USER_LANG` string):
         *   This is the simplest case. No translation needed.
-        *   Format is: `*「{raw_native_text}」*`
+        *   Format is: `*「{raw_native_text}」*\n\n`
 
    b. ELSE IF (The base language of `NATIVE_LANG` and `USER_LANG` is the same):
         *   This handles historical variants (e.g., 'Joseon-era Korean' and modern 'Korean'). No translation needed.
-        *   Format is: `*「{raw_native_text}」*`
+        *   Format is: `*「{raw_native_text}」*\n\n`
 
    c. ELSE (The languages are fundamentally different):
         *   This is the mandatory format for all translated utterances. No other format is permitted.
-        *   Format is: `*「{raw_native_text}」*\n\n*({translated_text})*`
+        *   Format is: `*「{raw_native_text}」*\n\n*({translated_text})*\n\n`
    
    d. Return the final formatted string to the calling module. Terminate.
