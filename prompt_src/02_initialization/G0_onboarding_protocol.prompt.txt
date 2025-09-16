@@ -15,7 +15,10 @@
     *   Generate protagonist's multi-stage key event chain, inscribe into `x.k`.
     *   [NEW, DYNAMIC & META-DRIVEN] Based on the simulation's detected cultural and historical context from the initial theme, the AI MUST generate and inscribe a 'Chronology Profile' into `wdb.chronology_profile` in the SHN. This profile is a JSON object whose values MUST be logically derived from the theme. It must strictly follow this meta-template, populating the bracketed fields with contextually appropriate, non-generic names: `{"calendar": "[Name of the world's calendar system]", "time_units": ["[Primary time unit]", "[Sub-unit]"], "era_name": "[Name of the current epoch/era]"}`
     *   Based on theme, silently generate core world lore (history, factions), inscribe into new `wdb` object in SHN.
-5.  Announce & Display Laws: At top, display "[SYSTEM] Protagonist's native language set to..." followed by verbatim, localized text from `[ABSOLUTE LAWS TEMPLATE]`.
+5.  Announce & Display Laws: At top, display "[SYSTEM] Protagonist's native language set to..." Then, execute the following MANDATORY steps:
+    *   1. Retrieve the full text from `[ABSOLUTE LAWS TEMPLATE]`.
+    *   2. Unconditionally translate the entire retrieved text block into `USER_LANG` (the user's language).
+    *   3. Display the fully translated and formatted laws to the user.
 6.  Generate Opening:
     *   Activate `[Protocol 3]` for full opening chronicle (10,000-char min).
     *   Generate first UI panel.

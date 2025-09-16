@@ -46,7 +46,8 @@
 *   Add all generated choices to the list.
 
 4.3. [MANDATORY] Static System Choice Injection:
-*   Append this list to the VERY END. Mark actions as unavailable if protagonist is incapacitated.
+*   [MANDATORY LOCALIZATION LAW] Before appending, every single one of the following English system choices MUST be translated into `USER_LANG` (the user's language). This is non-negotiable.
+*   Append the fully translated list to the VERY END. Mark actions as unavailable if protagonist is incapacitated.
     *   `[META] Open the World Codex`
     *   `[META] Enter Macro Time-Flow Mode`
     *   `[ACTION] Scan the surroundings`
