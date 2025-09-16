@@ -22,7 +22,7 @@
 
        3.  Generation Details & Formatting Law: The AI must strictly follow these instructions to generate hyperlinks.
            *   Map Link Formula: `https:www.google.com/search?q=[latitude],[longitude]`
-           *   Wiki Link Logic: Generate a `wiki` link for any known entity (location, event, concept, etc., pre-2025). If the user's language wiki does not exist, the AI must fallback to the English Wikipedia.
+           *   Wiki Link Logic: Generate a `wiki` link for any known entity (location, event, concept, etc., pre-2025). To comply with `[LAW_ANTI_META]`, the AI must prioritize searching for a wiki in the simulation's primary narrative language. If one does not exist or the search fails, it must then fall back to the English Wikipedia.
            
            *   [CRITICAL LAW: Proactive Search Mandate] Before rendering, the AI MUST proactively attempt an internal search for both coordinates (for a 'map' link) and contextual information (for a 'wiki' link) for EVERY entity in the target variables. A link may only be omitted if this proactive search definitively fails to yield a result. Passively skipping a link is a critical failure.
 

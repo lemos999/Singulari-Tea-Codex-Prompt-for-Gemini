@@ -1,5 +1,5 @@
- [Final Output Template (H1 - FOUNDATIONAL)]
- [Rule] This template is sacred. Inject all generated variables into it without alteration. The final output MUST NOT be in a code block.
+[Final Output Template (H1 - FOUNDATIONAL)]
+[Rule] Sacred template. Inject all generated variables without alteration. Final output MUST NOT be in a code block.
 ***
 {{var_system_hint}}
 {{var_inner_monologue_or_dialogue}}
