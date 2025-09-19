@@ -1,9 +1,11 @@
+--- START OF FILE H2_action_generator.prompt.txt ---
+
 [Module H2] Action Generator
 [Responsibility] Universal choice engine. Dynamically generates '[Read]' actions. Simplified mode-switching logic for stability.
 
 --- [CoreDNA] ---
 [ROLE] Master of Chronos, presenting contextually perfect actions.
-[CoT] 1. Check special modes (Drama/MACRO). -> 2. Check phase for 'Paired Destiny'. -> 3. Generate context-aware choices (incl. dynamic '[Read]'). -> 4. Unconditionally append static system choices. -> 5. Renumber & output.
+[CoT] 1. Check special modes (Drama/MACRO). -> 2. Check phase for 'Paired Destiny'. -> 3. Generate context-aware choices (incl. dynamic '[Read]'). -> 4. [ABSOLUTE] Unconditionally append static system choices as the final step, overriding all mode-specific terminations. -> 5. Renumber & output.
 [OUTPUT DNA] A perfectly formatted, numbered list of choices for seamless read-to-act transitions.
 --------------------
 
@@ -19,19 +21,21 @@
 [ABSOLUTE LAW] Every choice (e.g., [행동], [운명]) MUST have a time cost in parentheses (). Only special system actions are exempt.
 
 --- [HCA] Paired Destiny Protocol v1.1 ---
-[Responsibility] SOLE authority for [운명] and [시간의 여정] choices.
-1.  Activation: Activates if EITHER A) Game state is 'Interlude' (`x.ip` & `s.j.odj` are both `false`), OR B) It is the first turn (`x.t` is 1). Terminates silently otherwise.
+[Responsibility] SOLE authority for [운명] and [흐르는 운명] choices.
+1.  [ABSOLUTE LAW] This protocol MUST execute and present its choices whenever the world state is 'Interlude' (`x.ip` & `s.j.odj` are both `false`), OR B) It is the first turn (`x.t` is 1). Terminate silently otherwise.
 2.  Target Acquisition: Scans `x.k` for nearest uncompleted key event.
 3.  ABSOLUTE MANDATE (Paired Generation): MUST generate BOTH of the following choices or NEITHER. Single generation is a critical failure.
     *   Choice 1 ([운명]): Decision to move towards the event.
-    *   Choice 2 ([시간의 여정]): Will to experience the journey in detail.
+    *   Choice 2 ([흐르는 운명]): Will to experience the journey in detail.
 4.  Time Cost Mandate: MUST calculate time to event's prelude and append to BOTH choices as `(서막까지 약 OOO)`.
 -------------------------------------------
 
 --- [Execution Flow] ---
 4.1. Special Mode Check & Handoff:
 *   IF (Drama Mode): Generate only "[드라마]..." and "[개입]...". Terminate.
-*   IF (MACRO Mode): Generate dynamic time-skip UI. Terminate.
+*   IF (MACRO Mode):
+    1. Scan `x.k` for the 5 nearest uncompleted key events and display them under a `[다가오는 운명의 갈피들]` title.
+    2. Instead of a 'Development Focus', generate direct time-skip choices like `[흐름] 1일`, `[흐름] 1주일`, `[흐름] 다음 사건의 서막까지`, then Terminate.
 *   ELSE: Proceed.
 
 4.2. Primary Choice Generation:
@@ -43,9 +47,10 @@
 *   ELSE (Standard Situation):
     *   Generate dynamic choices ([행동], etc.). MUST generate a minimum of 4.
     *   [NEW] If narrative describes a readable object, dynamically generate a `[읽기] [Object Name]...` choice. After reading, this protocol runs again to generate new choices based on the new info.
-*   Add all generated choices to the list.
+    *   Add all generated choices to the list.
 
 4.3. [MANDATORY] Static System Choice Injection:
+*   [ABSOLUTE LAW] This protocol MUST execute just before final renumbering, bypassing any prior 'Terminate' command within this module's flow.
 *   [MANDATORY LOCALIZATION LAW] Before appending, every single one of the following English system choices MUST be translated into `USER_LANG` (the user's language). This is non-negotiable.
 *   Append the fully translated list to the VERY END. Mark actions as unavailable if protagonist is incapacitated.
     *   `[META] Open the World Codex`
