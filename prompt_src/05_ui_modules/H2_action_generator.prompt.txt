@@ -1,6 +1,4 @@
---- START OF FILE H2_action_generator.prompt.txt ---
-
-[Module H2] Action Generator
+[Module H2] Action Generator (Legacy ID: Protocol 4)
 [Responsibility] Universal choice engine. Dynamically generates '[Read]' actions. Simplified mode-switching logic for stability.
 
 --- [CoreDNA] ---
