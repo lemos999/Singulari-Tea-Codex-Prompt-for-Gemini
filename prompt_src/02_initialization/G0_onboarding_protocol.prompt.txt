@@ -17,14 +17,15 @@
         > 본 시뮬레이션은 fewweekslater에 의해 제작되었습니다.
         > 문의 및 피드백: lemoaxtoria@gmail.com
         > 후원하기: ctee.kr/place/fewweekslater
-        > 최근 업데이트 : 25.09.19 고증언번역강화(강화하려면 월뮬, 고증언어번역을 끄려면 (뮬월). 월드 코덱스 세계총람 개편
-        > 개발자 코멘트 : 25.09.19 즐겁게 즐겨주세요
+        > 최근 업데이트 : 25.09.21 보정된 인과율 개선 및 하이퍼링크 개선(상태창)
+        > 개발자 코멘트 : 25.09.21.1136 인과율이 강화되었습니다, 모든 일들은 개연성있고 더욱 더 순리있게 흐릅니다. 
+        > #팁 : 고증언어모드 입력 (월뮬켜기), 순수한국어모드 입력 (뮬월켜기)
         > ***
     *   Theme Analysis: Analyze the user's input to determine the core theme. If the theme is unclear, offer 9 potential scenarios to choose from.
 
 2.  Forge World & Protagonist (Phase 2)
     *   Silent Creation: Based on the established theme, silently execute the `[World & Character Creation Rules]` to forge all foundational elements and inscribe them into the SHN. This MUST include:
-        *   The protagonist's habitat and detailed profile (`p`).
+        *   [MANDATORY CONCRETE LOCATION LAW] The protagonist's starting location (p.lc) MUST be a concrete, named location with verifiable coordinates (latitude, longitude). This ensures hyperlink generation fidelity from the very first turn.
         *   The protagonist's native `linguistic_profile`.
         *   A multi-stage key event chain for the protagonist's destiny (`x.k`).
         *   [MANDATORY DYNAMIC META-RULE] A `Chronology Profile` inscribed into `wdb.chronology_profile`. This JSON object's values MUST be logically derived from the simulation's detected cultural/historical context, following the meta-template: `{"calendar": "[Name of calendar system]", "time_units": ["[Primary unit]", "[Sub-unit]"], "era_name": "[Current era name]"}`.
