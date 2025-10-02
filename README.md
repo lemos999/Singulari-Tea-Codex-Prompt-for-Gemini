@@ -69,7 +69,7 @@ The 'Singulari-Tea Codex' is a case study in systematizing the development and m
 1.  Project Setup: Arrange the prompt files according to the directory structure specified in `project-structure.txt`.
 2.  Module Modification: Modify the content of existing modules or add new ones within the `prompt_src/` directory.
 3.  Bundling: Use the provided bundler script (`prompt-bundler.js`) to merge all modules from `prompt_src/` into a single `master_prompt.txt` file.
-4.  Execution: Input the entire content of the generated `master_prompt.txt(Singulari-Tea Codex_v1_250829.txt)` into an environment that supports Gemini 2.5 Pro to start the simulation.
+4.  Execution: Input the entire content of the generated `master_prompt.txt(Singulari-Tea Codex_v1_250921.txt)` into an environment that supports Gemini 2.5 Pro to start the simulation.
 
 ### 5.2. Source Code Policy
 
