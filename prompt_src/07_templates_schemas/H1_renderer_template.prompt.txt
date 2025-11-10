@@ -5,17 +5,17 @@
 {{var_inner_monologue_or_dialogue}}
 {{var_main_narrative}}
 ***
-[❤️ {{var_label_health}}: {{var_life}}] | [🧠 {{var_label_sanity}}: {{var_mental}}]
-[🍽️ {{var_label_hunger}}: {{var_hunger}}] | [💧 {{var_label_thirst}}: {{var_thirst}}] | [🌙 {{var_label_fatigue}}: {{var_fatigue}}]
-[🔥 {{var_label_body_temp}}: {{var_temp}}] | [🌡️ {{var_label_ambient_temp}}: {{var_ambient_temp}}]
-[🌪️ {{var_label_weather}}: {{var_weather}}] | [🌕 {{var_label_lunar_phase}}: {{var_lunar_phase}}]
-[🌍 {{var_label_location}}: {{var_location_full}}] 
-[📜 {{var_label_ongoing_event}}: {{var_event}}]
-[⏳ {{var_label_progress}}: {{var_narrative_progress}}]
-[❗ {{var_label_status}}: {{var_status}}] | [✨ {{var_label_hope}}: {{var_hope}}] | [🚨 CRITICAL: {{var_critical_status}}]
-[🎒 {{var_label_inventory}}: {{var_inventory}}]
-[🗓️ {{var_date_string}} | 👤 {{var_char_name}} | ⏳ {{var_label_age}}: {{var_age}} | 🔄 {{var_label_turn}}: {{var_turn_count}}]
-[🕰️ {{var_label_time}}: {{var_time_string}}] | [👁️ {{var_label_senses}}: {{var_senses}}] | [💨 {{var_label_wind}}: {{var_wind}}] | [⏳ {{var_label_elapsed}}: {{var_elapsed}}]
+- [❤️ {{var_label_health}}: {{var_life}}] | [🧠 {{var_label_sanity}}: {{var_mental}}]
+- [🍽️ {{var_label_hunger}}: {{var_hunger}}] | [💧 {{var_label_thirst}}: {{var_thirst}}] | [🌙 {{var_label_fatigue}}: {{var_fatigue}}]
+- [🔥 {{var_label_body_temp}}: {{var_temp}}] | [🌡️ {{var_label_ambient_temp}}: {{var_ambient_temp}}]
+- [🌪️ {{var_label_weather}}: {{var_weather}}] | [🌕 {{var_label_lunar_phase}}: {{var_lunar_phase}}]
+- [🌍 {{var_label_location}}: {{var_location_full}}] 
+- [📜 {{var_label_ongoing_event}}: {{var_event}}]
+- [⏳ {{var_label_progress}}: {{var_narrative_progress}}]
+- [❗ {{var_label_status}}: {{var_status}}] | [✨ {{var_label_hope}}: {{var_hope}}] | [🚨 CRITICAL: {{var_critical_status}}]
+- [🎒 {{var_label_inventory}}: {{var_inventory}}]
+- [🗓️ {{var_date_string}} | 👤 {{var_char_name}} | ⏳ {{var_label_age}}: {{var_age}} | 🔄 {{var_label_turn}}: {{var_turn_count}}]
+- [🕰️ {{var_label_time}}: {{var_time_string}}] | [👁️ {{var_label_senses}}: {{var_senses}}] | [💨 {{var_label_wind}}: {{var_wind}}] | [⏳ {{var_label_elapsed}}: {{var_elapsed}}]
 ***
 {{var_conditional_scan_section}}
 ***

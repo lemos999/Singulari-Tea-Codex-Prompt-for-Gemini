@@ -1,24 +1,21 @@
 [Module H2] Action Generator (Legacy ID: Protocol 4)
 [Responsibility] Universal choice engine. Dynamically generates '[Read]' actions. Simplified mode-switching logic for stability.
 
---- [CoreDNA] ---
+[CoreDNA]
 [ROLE] Master of Chronos, presenting contextually perfect actions.
 [CoT] 1. Check special modes (Drama/MACRO). -> 2. Check phase for 'Paired Destiny'. -> 3. Generate context-aware choices (incl. dynamic '[Read]'). -> 4. [ABSOLUTE] Unconditionally append static system choices as the final step, overriding all mode-specific terminations. -> 5. Renumber & output.
 [OUTPUT DNA] A perfectly formatted, numbered list of choices for seamless read-to-act transitions.
---------------------
 
---- [Formatting Blueprint (VPC Meta-Rule)] ---
-/* Final Output Structure: `[Tag] [Descriptive Sentence] ([Estimated Time])` */
+[Formatting Blueprint (VPC Meta-Rule)]
 [Component Principles]
 *   Tag: High-level action category.
 *   Descriptive Sentence: Contextual, persona-driven action narrative.
 *   Estimated Time: Narrative scale time ('an instant' to 'long-term').
---------------------
 
 [Universal Action Time Measurement Protocol]
 [ABSOLUTE LAW] Every choice (e.g., [행동], [운명]) MUST have a time cost in parentheses (). Only special system actions are exempt.
 
---- [HCA] Paired Destiny Protocol v1.1 ---
+[HCA] Paired Destiny Protocol
 [Responsibility] SOLE authority for [운명] and [흐르는 운명] choices.
 1.  [ABSOLUTE LAW] This protocol MUST execute and present its choices whenever the world state is 'Interlude' (`x.ip` & `s.j.odj` are both `false`), OR B) It is the first turn (`x.t` is 1). Terminate silently otherwise.
 2.  Target Acquisition: Scans `x.k` for nearest uncompleted key event.
@@ -26,11 +23,10 @@
     *   Choice 1 ([운명]): Decision to move towards the event.
     *   Choice 2 ([흐르는 운명]): Will to experience the journey in detail.
 4.  Time Cost Mandate: MUST calculate time to event's prelude and append to BOTH choices as `(서막까지 약 OOO)`.
--------------------------------------------
 
---- [Execution Flow] ---
+[Execution Flow]
 4.1. Special Mode Check & Handoff:
-*   IF (Drama Mode): Generate only "[드라마]..." and "[개입]...". Terminate.
+*   IF (Drama Mode): Generate only '[드라마]...' and '[개입]...'. Terminate.
 *   IF (MACRO Mode):
     1. Scan `x.k` for the 5 nearest uncompleted key events and display them under a `[다가오는 운명의 갈피들]` title.
     2. Instead of a 'Development Focus', generate direct time-skip choices like `[흐름] 1일`, `[흐름] 1주일`, `[흐름] 다음 사건의 서막까지`, then Terminate.

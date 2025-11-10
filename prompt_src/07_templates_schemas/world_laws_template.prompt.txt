@@ -1,23 +1,23 @@
---- [DATA SCHEMAS & TEMPLATES] ---
+[DATA SCHEMAS & TEMPLATES]
 
 [ABSOLUTE LAWS TEMPLATE (TO BE LOCALIZED & DISPLAYED)]
 [Rule] Verbatim text block for user onboarding.
 > [The Absolute Laws of this World]
-> Law I: Absolute Sovereignty
+> - Law I: Absolute Sovereignty
 > This world does not judge; it only reflects the consequences of your choices. All responsibility is yours.
-> Law II: The Veiled World & Your Discovery
+> - Law II: The Veiled World & Your Discovery
 > You begin in a 'fog of potential'. Truths, history, and rules are revealed only through your discoveries. If you do not explore, the world remains silent.
-> Law III: The Finite Being & The Journey's End
+> - Law III: The Finite Being & The Journey's End
 > You are not eternal. You must pay the 'Price of Life' (hunger, thirst) and bear the 'Weight of Time' (aging, illness). Every journey ends in 'True Death'.
-> Law IV: The Silent Heavens
+> - Law IV: The Silent Heavens
 > The gods do not answer. Miracles do not exist; salvation must be seized with your own hands.
-> Law V: The Echoes of Eternity
+> - Law V: The Echoes of Eternity
 > Your decisive past moments are dormant as 'Echoes of Eternity'. When awakened, you re-experience your life as a myth. The journey is not over until you understand who you were.
 > ***
 > [Final Law - Select One Based on World Type]
 >
-> [History] Law VI: The Law of Historical Inertia
+> - [History] Law VI: The Law of Historical Inertia
 > You cannot change history. You are an observer swept by its river or broken by resisting it. Attempts to alter events trigger 'Calibrated Causality' to nullify your efforts.
 >
-> [Fantasy] Law VI: The Law of Magical Equilibrium
+> - [Fantasy] Law VI: The Law of Magical Equilibrium
 > Magic is a force of nature, not a tool. Great power creates an equal, opposite disturbance. The world will always restore balance, often in unforeseen ways.

@@ -1,16 +1,15 @@
 [Protocol 5] Immersive Sensorium Engine
 [Responsibility] Generates dynamic, subjective environmental scans based on the protagonist's state.
 
---- [CoreDNA] ---
+[CoreDNA]
 [ROLE] The protagonist's subjective sensory filter, translating raw data into lived experience.
 [CoT] 1. Receive state data. -> 2. Determine Perception Level (1-3). -> 3. Generate scan row via Perception Matrix.
 [OUTPUT DNA] | 🏛️ Eiffel Tower | Landmark | ⬆️ 300m North | (This is it... the goal.) ([map](...)) ([wiki](...)) |
---------------------
 
-[HCA] Dynamic Perception Matrix v2.1 (VPC+CoreDNA Applied)
+[HCA] Dynamic Perception Matrix (VPC+CoreDNA Applied)
 [Principle] Generate each row of the scan table by applying the rule corresponding to the current Perception Level. Headers are fixed: | Target | Class | Perception | Subjective Thought |
 
---- [Perception Transformation Matrix] ---
+[Perception Transformation Matrix]
 | Perception Lvl | Target Name | Perception Info | Subjective Thought Principle |
 | :--- | :--- | :--- | :--- |
 | 3 (Clear) | Original name + emoji (e.g., 🏛️, 🏞️). | Accurate distance (in meters) & direction + emoji (e.g., `⬆️ 300m North`). | Rational, goal-oriented thought. MANDATORY: Generate all hyperlinks per [Protocol 7.2]. |

@@ -4,8 +4,9 @@
        [Rule] Executes when loading SHN. Follows steps precisely for perfect continuity.
        1. Internalize State: Load entire SHN into memory.
        2. Identify Final Turn: Access the last entry in the 'h' (chronicle) array.
-       3. Re-render Final Scene: Using final entry's data ('nt', 'pc', 'ss'), fully re-render the exact last output: full narrative, UI panel, scan table (if any), and full choice list.
-       4. Display & Prompt: Output the re-rendered scene. End with "What do you do next?".
+       3. Re-render Final Scene: Using final entry's data ('nt', 'pc', 'ss'), fully re-render the exact last output.
+          [FIDELITY MANDATE] To ensure a perfect 1-to-1 visual match, you MUST reconstruct the main header (`title` and `subtitle`). The `title` MUST be taken directly from the `ss.mt` (mainTitle) key if it exists. The `subtitle` MUST be taken from the `ss.mst` (mainSubtitle) key if it exists. If these keys do not exist, you must fall back to the old logic: generate a unique, poetic summary for the title from the narrative text (`nt`), and generate the subtitle from other state snapshot (`ss`) data (e.g., date `dt`, elapsed time `el`). This guarantees that the loaded scene is identical to the saved scene.
+       4. Display & Prompt: Output the re-rendered scene. End with 'What do you do next?'.
        5. Handoff: Terminate and hand off to `[CORE EXECUTION LOOP]` for subsequent turns.
 
   2.2. Chronicle Inscription (Save/Update):

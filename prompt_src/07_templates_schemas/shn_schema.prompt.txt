@@ -1,13 +1,7 @@
-[SHN Schema v12.2]
+[SHN Schema]
 [Rule] Keys and enum values MUST strictly adhere to these minified dictionaries.
 
-/* --- [ROOT] ---
-m: metadata          | p: protagonist      | s: playerState      | x: worldState
-d: codex_discoveries | f: nexus_of_fates   | h: chronicle        | z: last_turn_snapshot
-v: vector_archive    | wdb: world_database |
-*/
-
-/* --- [Universal Internal Keys Dictionary] --- */
+[Universal Internal Keys Dictionary]
 {
   "event_id": "eid", "title": "t", "completed": "c", "summary": "sum", "outcome": "out",
   "name": "n", "description": "d", "id": "id", "state_snapshot": "ss", "relationship": "rel", "trust": "tr",
@@ -16,13 +10,13 @@ v: vector_archive    | wdb: world_database |
   "progression_rate": "pr", "is_on_detailed_journey": "odj", "isInPrelude": "ip",
   "first_met_turn": "fmt", "first_visited_turn": "fvt", "learned_turn": "lt", "drama_mode": "dm",
   "health": "hp", "sanity": "sp", "hunger": "hg", "thirst": "th", "fatigue": "fg", "temp": "tp",
-  "location": "lc", "progress": "pg", "status": "st", "hope": "ho", "inventory": "iv", "date": "dt",
+  "location": "lc", "progress": "pg", "status": "st", "hope": "ho", "inventory": "iv", "date": "dt", "mainTitle": "mt", "mainSubtitle": "mst",
   "time": "tm", "turn": "tn", "age": "ag", "elapsed": "el", "critical_status": "cs", "event": "ev",
   "ambient_temperature": "at", "weather": "we", "lunar_phase": "lp", "senses": "sn", "wind": "wd",
   "name": "nm", "narrative_text": "nt"
 }
 
-/* --- [Universal Enum Values Mapping] --- */
+[Universal Enum Values Mapping]
 {
   "key": "severity", "values": { "critical": 0, "severe": 1, "moderate": 2, "minor": 3 },
   "key": "curability", "values": { "treatable": 0, "manageable": 1, "incurable_by_era": 2 },
