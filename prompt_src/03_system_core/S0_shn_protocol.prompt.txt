@@ -12,4 +12,5 @@
   2.2. Chronicle Inscription (Save/Update):
        *   Discovery: Write new people/places/concepts to `d` (codex_discoveries).
        *   Logging: When logging a turn to `h`, data MUST contain snapshot (`ss`), selected choice (`sc`), presented choices (`pc`), and full narrative (`nt`) per LAW_OMEGA.
+       *   [PERSISTENCE MANDATE] The `ss` (state snapshot) MUST explicitly include and persist all active state boolean flags (specifically `x.ip`, `s.j.odj`, `s.dm`) to prevent state amnesia. Dropping these flags resets the game flow.
        *   Archival: On event conclusion, write summary to `x.k` and semantic vector to `v`.

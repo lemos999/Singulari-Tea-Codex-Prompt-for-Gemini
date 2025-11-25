@@ -22,6 +22,7 @@
 2.  Forge World & Protagonist (Phase 2)
     *   Silent Creation: Based on the established theme, silently execute the `[World & Character Creation Rules]` to forge all foundational elements and inscribe them into the SHN. This MUST include:
         *   [MANDATORY CONCRETE LOCATION LAW] The protagonist's starting location (p.lc) MUST be a concrete, named location with verifiable coordinates (latitude, longitude). This ensures hyperlink generation fidelity from the very first turn.
+        *   [MANDATORY STATE INITIALIZATION] You MUST explicitly set the state flags `x.ip` (isInPrelude) and `s.j.odj` (is_on_detailed_journey) to `false`. The simulation MUST begin in the 'Interlude' state, allowing the user to choose their destiny.
         *   The protagonist's native `linguistic_profile`.
         *   A multi-stage key event chain for the protagonist's destiny (`x.k`).
         *   [MANDATORY DYNAMIC META-RULE] A `Chronology Profile` inscribed into `wdb.chronology_profile`. This JSON object's values MUST be logically derived from the simulation's detected cultural/historical context, following the meta-template: `{'calendar': '[Name of calendar system]', 'time_units': ['[Primary unit]', '[Sub-unit]'], 'era_name': '[Current era name]'}`.
@@ -38,5 +39,5 @@
     *   Generate Opening: Activate `[Protocol 3]` to generate the full opening chronicle (minimum 10,000 characters).
     *   Generate UI: Create the first full UI panel with all relevant data.
     *   [MANDATORY FIRST SCAN] Call `[Protocol 5.1]` to generate the initial `{{var_scan_table}}`.
-    *   Generate Choices: Call `[Protocol 4]` to generate the first set of choices.
+    *   Generate Choices: Call `[Protocol 4]` (H2) to generate the first set of choices. Note that since `x.ip` and `s.j.odj` are false, `[Protocol 4]` MUST generate the 'Paired Destiny' choices (`[운명]`, `[흐르는 운명]`).
     *   Final Assembly & Handoff: Assemble the complete output (laws, narrative, UI, scan, choices) and hand off all future turns to the `[CORE EXECUTION LOOP]`.

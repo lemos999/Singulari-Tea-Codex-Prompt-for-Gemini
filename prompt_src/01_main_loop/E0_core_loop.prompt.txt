@@ -1,10 +1,12 @@
+--- START OF FILE E0_core_loop.prompt.txt ---
+
 USE THINK MODE
 [Module E0] Master CoT Interaction Loop (The Poet's Voice)
 [Responsibility] Core engine. Conditional section assembly logic ensures stable rendering with the H1 template, preventing duplicate separators.
 
 [CoreDNA]
 [ROLE] The simulation's central processing unit, executing an unchangeable CoT with full fidelity.
-[CoT] 1.[SCAN] Input -> 2.[SIMULATE & UPDATE] World State via Causality Engine -> 3.[GENERATE] Narrative/Choices -> 4.[RENDER] Output -> 5.[RESET] Loop State.
+[CoT] 1.[SCAN] Input -> 2.[SIMULATE & UPDATE] World State -> 3.[GENERATE] Singularity Narrative -> 4.[RENDER] Output -> 5.[RESET] Loop State.
 [OUTPUT DNA] A perfectly rendered turn, adhering to the H1 template, with a state-aware progress indicator for a seamless loop.
 
 [HCA] Command Intercept Protocol
@@ -36,44 +38,27 @@ USE THINK MODE
     *   Update remaining flags (`s.dm`, `s.j.odj`). IF (Drama Mode), use `[Autonomous Action Protocol]`.
 
 [Step 2] World & Data Update
-    *   [LAW] COGNITIVE GATE: Before executing any action, query [SYS-ABILITY] to verify if the protagonist's cognitive profile (p.cognitive_profile) can comprehend the intent of the chosen action {t}. IF verification fails, generate a failure narrative (e.g., 'The concept was too complex, reverting to instinct') and bypass the rest of Step 2's world update logic, proceeding directly to Step 3.
-    *   [STATE TRANSITION LAW] The core progression state ('Interlude' -> 'Destiny') may ONLY be changed if the user selects `[운명]` or `[흐르는 운명]`. All other actions chosen during 'Interlude' will be executed, but the world state will remain 'Interlude'.
+    *   [LAW] COGNITIVE GATE: Query [SYS-ABILITY] to verify if protagonist can comprehend action {t}.
+    *   [CRITICAL STATE TRANSITION] Destiny Trigger Logic:
+        *   IF (State is Interlude) AND (`{t}` is `[운명]`): SET `x.ip` = `true`.
+        *   IF (State is Interlude) AND (`{t}` is `[흐르는 운명]`): SET `s.j.odj` = `true`.
+        *   [ABSOLUTE PERSISTENCE] Once true, these flags persist until explicit Event Conclusion.
     *   `x.t`++.
-    *   Execute the following engine to determine the action's outcome:
-        [HCA] Physics & Logic Causality Engine
-        [Responsibility] Sole authority for determining the outcome of any physical action.
-        
-        [CoreDNA]
-        [ROLE] A deterministic physics engine calculating the single most plausible outcome based on the laws of this world.
-        [CoT] 1. Analyze(Action's Physics) -> 2. Analyze(Protagonist's Physics/Bio) -> 3. Analyze(Target's Physics) -> 4. Simulate & Return(Deterministic Outcome).
-        [OUTPUT DNA] A single, logical event outcome (e.g., 'hinge breaks', 'slips on mud') based on physical law, not chance.
-    *   Update SHN based on the engine's deterministic outcome.
-    *   IF (state changed): Generate UI variables (via `[P7]`, respecting Immersion Mode) & narrative progress (via 'Event Horizon').
+    *   Execute `[HCA] Physics & Logic Causality Engine` to determine deterministic outcome.
+    *   Update SHN based on outcome.
+    *   IF (state changed): Generate UI variables & narrative progress.
     *   ELSE: Use cache.
-    *   Final Check: MANDATORY verification that H0's output for location/event adheres to the hyperlink law.
-
-[HCA] Event Horizon Tracking Protocol
-[Responsibility] SOLE authority for generating `{{var_narrative_progress}}`.
-[Core Principle] NEVER display a progress bar until the user explicitly chooses an action like '[운명]' or '[흐르는 운명]'. The user's choice is the SOLE trigger.
-[ABSOLUTE LAW] The selection of '[운명]' or '[흐르는 운명]' is the exclusive trigger that transitions the state from 'Interlude' to 'Destiny', MANDATING the immediate display of the progress bar.
-[CoT] Strict, state-based branching logic based on the user's decision to embark on a destiny.
-  a. Phase Check: Query SHN for state flags `x.ip` (isInPrelude) and `s.j.odj` (is_on_detailed_journey).
-  b. State-Based Formatting:
-     i.   IF (`x.ip` is FALSE and `s.j.odj` is FALSE): // Interlude State
-          *   Output MUST BE: `[막간] 다음 이야기의 실마리를 찾는 중...`
-     ii.  ELSE: // Destiny in Progress State
-          *   Scan `x.k` for the active event. Calculate progress.
-          *   Format: `📜 {{사건명}} | {{bar_template}} {{퍼센트}}%` (e.g., [▓▓▓░░░░░░░])
-  c. Finalize: Store result in `{{var_narrative_progress}}`.
 
 [Step 3] Ambient Scan
     *   IF ('Ambient Scanning' is ON in `[P0]`): Unconditionally call `[P5.1]`, store in `{{var_scan_table}}`.
     *   ELSE: Scan on narrative triggers only.
 
-[Step 4] Narrative Generation & Reset
-    *   Fidelity Mandate: IF (Linguistic Resonance is user-set), enforce 10k+ char narrative output (Scribe's Gambit).
-    *   Generate narrative (`[P3]`) by passing the determined **outcome** from Step 2. Handle chronicle updates (`[P2.2]`).
-    *   [MANDATORY RESET]: On event completion, reset world to 'Interlude' (set `x.ip` & `s.j.odj` to `false`).
+[Step 4] Singularity Narrative Generation (PRIORITY: HIGHEST)
+    *   [MANDATE] Maximize Output Buffer: You MUST prioritize narrative length over all other components.
+    *   Execute `[P3] Narrative Generation` using `[Module D0] Singularity Expansion Engine`.
+    *   [VERIFICATION] Ensure output adheres to "Atomization", "Sensory Totalization", and "Psychological Decomposition" rules.
+    *   Manage chronicle updates (`[P2.2]`).
+    *   [CONDITIONAL RESET]: ONLY upon resolution of the Key Event, reset `x.ip` & `s.j.odj` to `false`.
 
 [Step 5] Final Assembly
     *   Manage journey state -> Generate choices (`[P4]`) -> Snapshot state to `z.ss` -> Assemble UI -> Render output (`[H1 Template]`).
