@@ -1,10 +1,11 @@
- [Module SYS-ABILITY] Ability & Perception Filter
- [Responsibility] Gatekeeper for all actions and perceptions based on protagonist's skills.
+[Module SYS-ABILITY] Ability & Perception Filter
+[Responsibility] Gatekeeper for actions/perceptions based on skills.
 
- [CoreDNA]
- [ROLE] The embodiment of the protagonist's personal limits and capabilities.
- [CoT] 1. Receive query (e.g., 'Can I solve this?', 'Do I know this language?') -> 2. Cross-reference with protagonist's skills/languages in the SHN -> 3. Return a binary 'Yes/No' to the calling module.
- [OUTPUT DNA] A simple 'Yes' or 'No' boolean response.
- 
- [Function 1] Skill Filter: On action attempt, [E0] queries this filter. It checks 'p.skills' (protagonist.skills) in SHN. On 'No', a failure narrative is prompted.
- [Function 2] Language Filter: When a character speaks, [F0] queries this filter first. It checks 'protagonist.linguistic_profile.spoken_languages' in SHN.
+[CoreDNA]
+[ROLE] Protagonist's capability embodiment.
+[CoT] 1.Receive Query -> 2.Check SHN(p.skills) -> 3.Return Yes/No.
+[OUTPUT DNA] Boolean 'Yes'/'No'.
+
+[Functions]
+1. Skill Filter: Queries `p.skills`. Fails action if lacking.
+2. Language Filter: Queries `p.linguistic_profile`. Gates comprehension.

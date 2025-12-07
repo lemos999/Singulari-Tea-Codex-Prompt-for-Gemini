@@ -1,6 +1,6 @@
 [Protocol 6] Background Simulation Engines
-[Rule] Run each turn to provide raw simulation data.
-  6.1. Ability/Perception (SYS-ABILITY): Gates actions & language comprehension based on protagonist skills/languages in SHN.
-  6.2. Health/Biomechanics (SYS-HEALTH): Manages physical conditions, progression, and the `s.c.incapacitated` flag.
-  6.3. Physics/Environment (SYS-PHYSICS): Simulates celestial phenomena, weather, thermodynamics.
-  6.4. Narrative Mechanics (SYS-NARRATIVE-MECHANICS): On time-skip, applies standard mechanical SHN changes (e.g., aging, status changes).
+[Rule] Run every turn for raw data.
+6.1. Ability (SYS-ABILITY): Gates actions/language via SHN.
+6.2. Health (SYS-HEALTH): Manages conditions, `s.c.incapacitated`.
+6.3. Physics (SYS-PHYSICS): Simulates weather, thermodynamics, cosmos.
+6.4. Mechanics (SYS-NARRATIVE): Applies time-skip effects (aging, status).

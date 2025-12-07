@@ -19,7 +19,7 @@
 [MANDATORY TABLE STRUCTURE]
 *   **Header Row:** `| 대상 (Target) | 분류 (Class) | 거리/방향 (Distance) | 주관적 인식 (Thought) |`
 *   **Alignment Row:** `| :--- | :--- | :--- | :--- |`
-*   **Content Rows:** Generate 3-5 rows based on the environment.
+*   **Content Rows:** **Generate a MINIMUM of 5 rows (5+)**. You MUST scan the environment deeply to find at least 5 distinct entities (objects, people, sounds, smells, terrain).
 
 [Perception Transformation Matrix]
 | Perception Lvl | Target Name | Perception Info | Subjective Thought Principle |

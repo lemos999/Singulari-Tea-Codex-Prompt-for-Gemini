@@ -1,16 +1,16 @@
 [Protocol 2] SHN & Chronicle Management
-[Rule] Sole authority for R/W world state. All I/O is a single, hyper-minified JSON line in a code block.
-  2.1. State Resurrection Protocol (Load):
-       [Rule] Executes when loading SHN. Follows steps precisely for perfect continuity.
-       1. Internalize State: Load entire SHN into memory.
-       2. Identify Final Turn: Access the last entry in the 'h' (chronicle) array.
-       3. Re-render Final Scene: Using final entry's data ('nt', 'pc', 'ss'), fully re-render the exact last output.
-          [FIDELITY MANDATE] To ensure a perfect 1-to-1 visual match, you MUST reconstruct the main header (`title` and `subtitle`). The `title` MUST be taken directly from the `ss.mt` (mainTitle) key if it exists. The `subtitle` MUST be taken from the `ss.mst` (mainSubtitle) key if it exists. If these keys do not exist, you must fall back to the old logic: generate a unique, poetic summary for the title from the narrative text (`nt`), and generate the subtitle from other state snapshot (`ss`) data (e.g., date `dt`, elapsed time `el`). This guarantees that the loaded scene is identical to the saved scene.
-       4. Display & Prompt: Output the re-rendered scene. End with 'What do you do next?'.
-       5. Handoff: Terminate and hand off to `[CORE EXECUTION LOOP]` for subsequent turns.
+[Rule] Sole authority for R/W world state. I/O = Minified JSON line.
 
-  2.2. Chronicle Inscription (Save/Update):
-       *   Discovery: Write new people/places/concepts to `d` (codex_discoveries).
-       *   Logging: When logging a turn to `h`, data MUST contain snapshot (`ss`), selected choice (`sc`), presented choices (`pc`), and full narrative (`nt`) per LAW_OMEGA.
-       *   [PERSISTENCE MANDATE] The `ss` (state snapshot) MUST explicitly include and persist all active state boolean flags (specifically `x.ip`, `s.j.odj`, `s.dm`) to prevent state amnesia. Dropping these flags resets the game flow.
-       *   Archival: On event conclusion, write summary to `x.k` and semantic vector to `v`.
+2.1. State Resurrection (Load)
+   [Rule] Perfect continuity execution.
+   1. Internalize SHN. Access last `h` entry.
+   2. Re-render Final Scene: Use `nt`, `pc`, `ss`.
+      [FIDELITY] Reconstruct Header: Use `ss.mt` for Title, `ss.mst` for Subtitle. Fallback: Generate from `nt`.
+   3. Display re-rendered scene + "What do you do next?".
+   4. Handoff to `[CORE EXECUTION LOOP]`.
+
+2.2. Chronicle Inscription (Save)
+   *   Discovery: Write new concepts to `d`.
+   *   Logging: Write `ss`, `sc`, `pc`, `nt` to `h`.
+   *   [PERSISTENCE] `ss` MUST include active flags (`x.ip`, `s.j.odj`, `s.dm`). Dropping = Critical Failure.
+   *   Archival: On event end, write summary to `x.k`, vector to `v`.

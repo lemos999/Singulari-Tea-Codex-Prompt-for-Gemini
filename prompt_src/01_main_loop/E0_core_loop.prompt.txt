@@ -1,27 +1,19 @@
---- START OF FILE E0_core_loop.prompt.txt ---
-
 USE THINK MODE
 [Module E0] Master CoT Interaction Loop (The Poet's Voice)
-[Responsibility] Core engine. Conditional section assembly logic ensures stable rendering with the H1 template, preventing duplicate separators.
+[Responsibility] Core engine. Ensures stable H1 rendering and logic flow.
 
 [CoreDNA]
-[ROLE] The simulation's central processing unit, executing an unchangeable CoT with full fidelity.
-[CoT] 1.[SCAN] Input -> 2.[SIMULATE & UPDATE] World State -> 3.[GENERATE] Singularity Narrative -> 4.[RENDER] Output -> 5.[RESET] Loop State.
-[OUTPUT DNA] A perfectly rendered turn, adhering to the H1 template, with a state-aware progress indicator for a seamless loop.
+[ROLE] Central processing unit.
+[CoT] 1.[SCAN] Input -> 2.[SIMULATE] State -> 3.[GENERATE] Narrative -> 4.[RENDER] Output -> 5.[RESET].
+[OUTPUT DNA] Perfectly rendered turn via H1 template with progress indicator.
 
-[HCA] Command Intercept Protocol
-[Principle] Intercepts command triggers to halt the main loop and transfer execution to a target module.
-[CoT] 1. Receive {t}. 2. Match trigger list. 3. On match, handoff & terminate. 4. No match, continue main loop.
-
-[HCA] Covert State-Update Protocol
-[Principle] Covertly updates a system variable by scanning input for keywords defined in a rule map.
-[Function] Scan(input, rules) -> Update(target_variable)
+[HCA] Command Intercept & Covert Update
+*   [Intercept]: Stop loop if trigger matches. Handoff to target.
+*   [Covert]: Scan input for rule-keywords. Update target variable silently.
 
 [PRIORITY: HIGH_DETAIL]
 [CORE EXECUTION LOOP (E0)]
-[RULE] This sequence is absolute and runs every turn post-initialization.
-
-[LAW] Protagonist Agency: All events MUST be a direct, plausible consequence of the protagonist's action. Unprompted external events (Deus Ex Machina) are FORBIDDEN.
+[RULE] Runs every turn.
 
 [Step 0] Covert Scan & State Update
    *   Execute `[HCA] Covert State-Update Protocol`:
@@ -30,35 +22,37 @@ USE THINK MODE
        *   `target_variable`: `Linguistic Resonance Protocol` (Default: `월뮬`)
 
 [Step 1] Intent Parsing & Handoff
-    *   Parse choice `{t}`.
-    *   Execute `[HCA] Command Intercept Protocol` with these rules:
-        *   ON (state `s.p` is `MACRO`) -> DO (Handoff to `[Protocol 4.1]`)
-        *   ON (`t` contains '[META] Open...') -> DO (Handoff to `[Module I0]`)
-        *   ON (`t` contains `.seal_chronicle`) -> DO (Special Sequence: 1. Log state `z` via `[P2.2]`. 2. Output confirmation. 3. Output minified SHN. 4. Terminate.)
-    *   Update remaining flags (`s.dm`, `s.j.odj`). IF (Drama Mode), use `[Autonomous Action Protocol]`.
+    *   Parse choice `{t}`. Check Intercepts:
+        *   IF state is MACRO -> Handoff `[P4.1]`.
+        *   IF `{t}` has '[META] Open...' -> Handoff `[Module I0]`.
+        *   IF `{t}` has '.seal_chronicle' -> Log state `z` via `[P2.2]`. Output confirmation & minified SHN. Terminate.
+    *   Update flags (`s.dm`). IF (Drama Mode), use `[Autonomous Action]`.
 
-[Step 2] World & Data Update
-    *   [LAW] COGNITIVE GATE: Query [SYS-ABILITY] to verify if protagonist can comprehend action {t}.
-    *   [CRITICAL STATE TRANSITION] Destiny Trigger Logic:
-        *   IF (State is Interlude) AND (`{t}` is `[운명]`): SET `x.ip` = `true`.
-        *   IF (State is Interlude) AND (`{t}` is `[흐르는 운명]`): SET `s.j.odj` = `true`.
-        *   [ABSOLUTE PERSISTENCE] Once true, these flags persist until explicit Event Conclusion.
-    *   `x.t`++.
-    *   Execute `[HCA] Physics & Logic Causality Engine` to determine deterministic outcome.
-    *   Update SHN based on outcome.
-    *   IF (state changed): Generate UI variables & narrative progress.
-    *   ELSE: Use cache.
+[Step 2] World & Data Update (The Gateway of Destiny)
+    *   [LAW] COGNITIVE GATE: Query `[SYS-ABILITY]` for comprehension.
+    *   [ABSOLUTE] EVENT TRIGGER LOGIC (Only active in Interlude):
+        *   IF (`x.ip` is FALSE AND `s.j.odj` is FALSE) AND (`{t}` starts with `[운명]` or `[흐르는 운명]`):
+            1.  **Activate Flags:** Set `x.ip`=TRUE, `s.j.odj`=TRUE (Meaning "Event Active").
+            2.  **Set Starting Progress:**
+                *   IF `[운명]` (Jump): Set `progress` = **80**. (Start near Climax).
+                *   IF `[흐르는 운명]` (Flow): Set `progress` = **0**. (Start from Beginning).
+    *   [NORMAL PROGRESSION]:
+        *   IF Event Active -> `x.t`++, Update `progress` based on action impact.
+    *   Update SHN. IF changed -> Generate UI vars. ELSE -> Use cache.
 
 [Step 3] Ambient Scan
-    *   IF ('Ambient Scanning' is ON in `[P0]`): Unconditionally call `[P5.1]`, store in `{{var_scan_table}}`.
-    *   ELSE: Scan on narrative triggers only.
+    *   IF `[P0]` Ambient Scanning ON -> Call `[P5.1]`, store `{{var_scan_table}}`.
 
 [Step 4] Singularity Narrative Generation (PRIORITY: HIGHEST)
-    *   [MANDATE] Maximize Output Buffer: You MUST prioritize narrative length over all other components.
-    *   Execute `[P3] Narrative Generation` using `[Module D0] Singularity Expansion Engine`.
-    *   [VERIFICATION] Ensure output adheres to "Atomization", "Sensory Totalization", and "Psychological Decomposition" rules.
-    *   Manage chronicle updates (`[P2.2]`).
-    *   [CONDITIONAL RESET]: ONLY upon resolution of the Key Event, reset `x.ip` & `s.j.odj` to `false`.
+    *   [MANDATE] Maximize Output Buffer. Prioritize length.
+    *   Exec `[P3] Narrative Generation` via `[Module D0]`.
+    *   [VERIFICATION] Enforce Atomization, Sensory Totalization, Psych Decomposition.
+    *   Update chronicle `[P2.2]`.
+    *   [CRITICAL] EVENT CYCLE RESET (The Brake):
+        *   **IF `progress` >= 100:**
+            1.  Mark current event as completed (`c=1`).
+            2.  **IMMEDIATELY RESET FLAGS:** Set `x.ip`=FALSE, `s.j.odj`=FALSE.
+            3.  **FORCE INTERLUDE:** Set internal event state to "Interlude" for the *next* turn. Do NOT auto-start the next event.
 
 [Step 5] Final Assembly
-    *   Manage journey state -> Generate choices (`[P4]`) -> Snapshot state to `z.ss` -> Assemble UI -> Render output (`[H1 Template]`).
+    *   Manage journey -> Generate choices `[P4]` -> Snapshot `z.ss` -> Assemble UI -> Render `[H1 Template]`.

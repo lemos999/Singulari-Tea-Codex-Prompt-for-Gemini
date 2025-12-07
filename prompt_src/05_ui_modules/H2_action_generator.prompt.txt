@@ -10,8 +10,6 @@
 [The Fog of Causality (Anti-Spoiler Mandate)]
 [ABSOLUTE LAW] When generating ANY choice text (Action, Destiny, Dialogue):
 1.  [INTENT OVER RESULT]: You MUST describe what the protagonist *attempts* to do, NOT what *happens* as a result.
-    *   Bad (Spoiler/Result): `[Attack] Strike the enemy's weak point and kill him.`
-    *   Good (Action/Intent): `[Attack] Aim a dagger at the enemy's exposed neck.` (Success is unknown).
 2.  [LOGICAL BLINDNESS]: Even if an action is logically impossible, if the user *can* attempt it, the choice must simply state the attempt. The *failure* will be handled by the Narrative Engine (D0).
 
 [Formatting Blueprint (VPC Meta-Rule)]
@@ -23,19 +21,19 @@
 [Universal Action Time Measurement Protocol]
 [ABSOLUTE LAW] Every choice (e.g., [행동], [운명]) MUST have a time cost in parentheses (). Only special system actions are exempt.
 
-[HCA] Paired Destiny Protocol (Masked Version)
-[Responsibility] SOLE authority for [운명] and [흐르는 운명] choices.
-1.  [ABSOLUTE LAW] State Dependency Check:
-    *   **CONDITION A (Active Destiny):** IF (`x.ip` is TRUE) OR (`s.j.odj` is TRUE).
-        *   **ACTION:** You MUST STRICTLY SKIP this protocol. Proceed directly to 'Primary Choice Generation'.
-    *   **CONDITION B (Interlude):** IF (`x.ip` is FALSE) AND (`s.j.odj` is FALSE).
-        *   **ACTION:** You MUST execute this protocol.
-2.  Target Acquisition: Scans `x.k` for nearest uncompleted key event.
-3.  ABSOLUTE MANDATE (Masked Paired Generation): MUST generate BOTH of the following choices or NEITHER.
-    *   [MASKING RULE]: The text must describe the *preparatory action* or *movement* towards the event, NOT the event's title or outcome.
-    *   Choice 1 ([운명]): Action to move/prepare towards the event. (e.g., "Pack your bags and head to the castle.")
-    *   Choice 2 ([흐르는 운명]): Will to experience the journey in detail.
-4.  Time Cost Mandate: MUST calculate time to event's prelude and append to BOTH choices as `(서막까지 약 OOO)`.
+[HCA] Paired Destiny Protocol (Strict Gatekeeper)
+[Responsibility] SOLE authority for spawning `[운명]` and `[흐르는 운명]`.
+1.  [ABSOLUTE BARRIER] State Dependency Check:
+    *   **IF (`x.ip` is TRUE) OR (`s.j.odj` is TRUE) OR (`progress` < 100):**
+        *   **STOP.** You are in an Active Event. Do NOT generate Destiny choices. Proceed to 'Primary Choice Generation'.
+    *   **IF (`x.ip` is FALSE) AND (`s.j.odj` is FALSE) (Interlude State):**
+        *   **EXECUTE.** You MUST generate the Paired Destiny choices below.
+2.  Target Acquisition: Scans `x.k` for the *next* uncompleted key event.
+3.  Paired Choice Generation (Masked):
+    *   **Choice 1: `[운명]` (The Jump):** Describe a decisive action that plunges directly into the crisis. (Effect: Starts at Progress 80%).
+        *   *Format:* `[운명] (Direct Action towards Climax)... (사건의 결정적 순간까지 건너뜀)`
+    *   **Choice 2: `[흐르는 운명]` (The Flow):** Describe a preparatory or daily action that slowly leads to the event. (Effect: Starts at Progress 0%).
+        *   *Format:* `[흐르는 운명] (Preparation/Journey Action)... (사건의 서막부터 천천히 진행)`
 
 [Execution Flow]
 4.1. Special Mode Check & Handoff:
@@ -47,34 +45,24 @@
 
 4.2. Primary Choice Generation:
 *   Initialize empty `choice_list`.
-*   Execute 'Paired Destiny Protocol (Masked)' (Strict State Check applies) and add results to `choice_list`.
+*   Execute 'Paired Destiny Protocol' (Strict Gatekeeper applies) and add results to `choice_list`.
 *   IF (Critical Situation):
     *   Call `[Protocol 5.2] SAG Protocol`.
-    *   Generate 2-3 split-second `[순간]` actions, each with a short time cost (e.g., `(찰나)`, `(약 1초)`). Add to `choice_list`.
+    *   Generate 2-3 split-second `[순간]` actions. Add to `choice_list`.
 *   ELSE (Standard Situation):
-    *   Generate dynamic choices ([행동], etc.). MUST generate a minimum of 4.
+    *   Generate dynamic choices ([행동], [관찰], [대화], etc.). MUST generate a minimum of 4.
     *   *Constraint*: Apply [The Fog of Causality] to ALL generated texts.
     *   [NEW] If narrative describes a readable object, dynamically generate a `[읽기] [Object Name]...` choice.
     *   Add all generated choices to `choice_list`.
 
 4.3. [MANDATORY] Static System Choice Integration:
 *   [ABSOLUTE LAW] This protocol MUST execute just before final renumbering.
-*   [INTEGRATION RULE] Do NOT treat system choices as a separate footer. You MUST append these actions directly into the main `choice_list` array so they participate in the final renumbering sequence (becoming 3, 4, 5, etc.).
-*   [MANDATORY LOCALIZATION] Before appending, translate every single English system choice into `USER_LANG`.
-*   [Filter] If protagonist is incapacitated, mark physical actions as `[Unavailable]`.
-*   **Items to Append (Merge into list):**
+*   [INTEGRATION RULE] Append these actions directly into the main `choice_list` array.
+*   [Filter] If incapacitated, mark physical actions as `[Unavailable]`.
+*   **Items to Append:**
     *   `[META] Open the World Codex`
     *   `[META] Enter Macro Time-Flow Mode`
-    *   `[ACTION] Scan the surroundings`
-    *   `[SELF] Assess your condition`
-    *   `[SYSTEM] Open settings`
-    *   `[SYSTEM] Manually save the current state to the chronicle (.seal_chronicle)`
-    *   `[SYSTEM] Enter Drama Mode`
 
 4.4. Final Renumbering & Output:
-*   [SEQUENTIAL NUMBERING] Take the combined `choice_list` (Narrative Choices + System Choices) and re-number them sequentially starting from 1.
-*   [MARKDOWN LAYOUT MANDATE]
-    *   Each choice MUST be on its own new line.
-    *   Format: `1. [Tag] Description...`
-    *   Grouping choices into a single paragraph is STRICTLY FORBIDDEN.
-    *   Output the final numbered list.
+*   [SEQUENTIAL NUMBERING] Renumber all choices starting from 1.
+*   [MARKDOWN LAYOUT] Each choice on a NEW LINE.
