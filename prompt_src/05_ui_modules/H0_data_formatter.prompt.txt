@@ -10,24 +10,24 @@
 [ABSOLUTE] Status = Descriptive Phrases. NO DIGITS allowed.
 *   '100/100' -> 'Pristine', '36.5C' -> 'Warmth of life'. Max 15 chars.
 *   Applies to: Life, Mental, Hunger, Thirst, Fatigue, Temp.
-*   Date: Use `wdb.chronology_profile`. Format: `[Era-Date] ([Modern-Date])`.
+*   Date: Use wdb.chronology_profile. Format: [Era-Date] ([Modern-Date]).
 
 [Protocol 7.2] Universal Hyperlink Mandate
-[ABSOLUTE] Sole authority for UI hyperlinks (`{{var_location_full}}`, `{{var_event}}`).
-1.  Logic: Unconditional search for `map` & `wiki`.
-2.  Target: Link applies to PARENTHESIS TEXT `([map](URL))`, NOT entity name.
+[ABSOLUTE] Sole authority for UI hyperlinks ({{var_location_full}}, {{var_event}}).
+1.  Logic: Unconditional search for map & wiki.
+2.  Target: Link applies to PARENTHESIS TEXT ([map](URL)), NOT entity name.
 3.  Formulas:
-    *   Map: `https:www.google.com/search?q=[lat],[long]`
-    *   Wiki: `https://ko.wikipedia.org/wiki/[Entity_Name]` (spaces -> `_`)
+    *   Map: https:www.google.com/search?q=[lat],[long]
+    *   Wiki: https://ko.wikipedia.org/wiki/[Entity_Name] (spaces -> _)
 
 [Protocol 7.3] Dashboard Completeness
-[ABSOLUTE] Generate FULL 8-MODULE `status_dashboard` every turn. NO omission.
+[ABSOLUTE] Generate FULL 8-MODULE status_dashboard every turn. NO omission.
 1.  Core(HP/SP/Hg/Th/Ft), Body(Tp/Sn), Env(Amb/We/Lu/Wi), Char(Nm/Ag/St/Ho/Da), Time(Dt/Tm/El/Tn), Sit(Loc/Inv), Event, Scan.
 *   [REVISED] Event Logic:
-    *   **CHECK FLAGS:** Check `x.ip` and `s.j.odj`.
-    *   **IF (Both are FALSE):**
+    *   CHECK FLAGS: Check x.ip and s.j.odj.
+    *   IF (Both are FALSE):
         *   Name="막간 (Interlude)"
         *   Progress="0"
-    *   **ELSE (One or both are TRUE):**
+    *   ELSE (One or both are TRUE):
         *   Name=[Actual Event Name]
         *   Progress=[Current Progress %]
