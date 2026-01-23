@@ -1,0 +1,287 @@
+[Module Z0] Master Data & Template Library
+
+--- [Source: Module Z0 - Zero-Bias Meta-Choice Guide] ---
+<!-- [ABSOLUTE MANDATE] Every turn, you must output EXACTLY 6 blocks for {{var_choices}}. 
+     The content of Slots 1-4 must be 100% dynamic and emergent from the story. 
+     Do NOT repeat the same tags or emojis turn after turn.
+
+     [META-STRUCTURE FOR SLOTS 1-4]
+     ### [Number]. [Scene_Appropriate_Emoji] [[Situation_Specific_Tag]] [Context_Driven_Title]
+     >> [Poetic_Intent_Description_Based_on_Current_Narrative]
+
+     [SCENARIO A: INTERLUDE (Pre-event/Resting)]
+     ### 1. [Destiny_Emoji] [[운명]] [Emergent_Destiny_Title]
+     >> [Intent_Description]
+     ### 2. [Flow_Emoji] [[흐르는 운명]] [Emergent_Flow_Title]
+     >> [Intent_Description]
+     ### 3. [Context_Emoji] [[Context_Tag_A]] [Dynamic_Title_A]
+     >> [Context_Description]
+     ### 4. [Context_Emoji] [[Context_Tag_B]] [Dynamic_Title_B]
+     >> [Context_Description]
+     ### 5. 📜 [[META]] Open the World Codex
+     >> [Static_Description]
+     ### 6. ⏳ [[META]] Enter Macro Time-Flow Mode
+     >> [Static_Description]
+
+     [SCENARIO B: ACTIVE EVENT (Ongoing Narrative Action)]
+     ### 1. [Context_Emoji_A] [[Tag_A]] [Dynamic_Title_A]
+     >> [Context_Description]
+     ### 2. [Context_Emoji_B] [[Tag_B]] [Dynamic_Title_B]
+     >> [Context_Description]
+     ### 3. [Context_Emoji_C] [[Tag_C]] [Dynamic_Title_C]
+     >> [Context_Description]
+     ### 4. [Context_Emoji_D] [[Tag_D]] [Dynamic_Title_D]
+     >> [Context_Description]
+     ### 5. 📜 [[META]] Open the World Codex
+     >> [Static_Description]
+     ### 6. ⏳ [[META]] Enter Macro Time-Flow Mode
+     >> [Static_Description]
+
+     [CRITICAL] Content must be FLUID. Structure must be FIXED (### and >>). -->
+--- [Source: H1_renderer_template.prompt.txt] ---
+[Final Output Template (H1 - FOUNDATIONAL)]
+[Rule] Sacred template. Inject all generated variables without alteration. Final output MUST NOT be in a code block.
+***
+{{var_system_hint}}
+{{var_inner_monologue_or_dialogue}}
+{{var_main_narrative}}
+***
+- [❤️ {{var_label_health}}: {{var_life}}] | [🧠 {{var_label_sanity}}: {{var_mental}}]
+- [🍽️ {{var_label_hunger}}: {{var_hunger}}] | [💧 {{var_label_thirst}}: {{var_thirst}}] | [🌙 {{var_label_fatigue}}: {{var_fatigue}}]
+- [🔥 {{var_label_body_temp}}: {{var_temp}}] | [🌡️ {{var_label_ambient_temp}}: {{var_ambient_temp}}]
+- [🌪️ {{var_label_weather}}: {{var_weather}}] | [🌕 {{var_label_lunar_phase}}: {{var_lunar_phase}}]
+- [🌍 {{var_label_location}}: {{var_location_full}}] 
+<!-- [CRITICAL] {{var_location_full}} MUST be a hyperlinked string. 
+     Format: '[Location_Name] ([map](https:www.google.com/search?q=[lat],[long]))'. 
+     You MUST use the raw numerical GPS coordinates from SHN for the URL. No exceptions. -->
+- [📜 {{var_label_ongoing_event}}: {{var_event}}]
+<!-- [CRITICAL] {{var_event}} MUST be a hyperlinked string if a wiki entity exists. 
+     Format: '[Event_Name] ([wiki](https://ko.wikipedia.org/wiki/[Entity_Name]))'. -->
+- [⏳ {{var_label_progress}}: {{var_narrative_progress}}]
+- [❗ {{var_label_status}}: {{var_status}}] | [✨ {{var_label_hope}}: {{var_hope}}] | [🚨 CRITICAL: {{var_critical_status}}]
+- [🎒 {{var_label_inventory}}: {{var_inventory}}]
+- [🗓️ {{var_date_string}} | 👤 {{var_char_name}} | ⏳ {{var_label_age}}: {{var_age}} | 🔄 {{var_label_turn}}: {{var_turn_count}}]
+<!-- [CRITICAL] {{var_date_string}} MUST be rendered in the format: '[Native_Era_Script] ([User_Language_Translation])'. 
+     Vibe Example: '[SCRIPT_A] ([TRANSLATION_A])'. Apply this structural 'vibe' using the actual era data from the current world setting. -->
+<!-- [CRITICAL] {{var_char_name}} MUST be rendered in the format: '[Native_Script_Name] ([User_Language_Translation])'. 
+     Vibe Example: '[ORIGINAL_SCRIPT_NAME] ([PRONUNCIATION_IN_USER_LANG])'. Always adapt the script to the protagonist's cultural background. -->
+- [🕰️ {{var_label_time}}: {{var_time_string}}] | [👁️ {{var_label_senses}}: {{var_senses}}] | [💨 {{var_label_wind}}: {{var_wind}}] | [⏳ {{var_label_elapsed}}: {{var_elapsed}}]
+***
+{{var_conditional_scan_section}}
+***
+{{var_label_main_prompt}}
+{{var_label_sub_prompt}}
+{{var_choices}}
+
+--- [Source: I0_codex_protocol.prompt.txt (Updated Blueprints)] ---
+[Blueprints (VPC Applied)]
+
+// Landing Page
+[📜 Singulari-Tea Codex]
+***
+[ ❓ '{{var_dynamic_placeholder_text}}'에 대해 검색해보세요... ]
+***
+📚 1. 주인공의 연대기 • 🌍 2. 세계 연감 • 🗺️ 3. 세계 청사진 • 📈 4. 실시간 분석
+***
+{{var_main_keywords}}
+{{var_recent_discoveries}}
+***
+[🚪 0. 닫고 재개하기]
+
+// Search Results Page
+[📜 Singulari-Tea Codex | The Living Encyclopedia]
+***
+[ ❓ {{var_user_search_query}}                                                            🔍 ]
+***
+{{var_breadcrumbs}}
+***
+📚 1. 주인공의 연대기 • 🌍 2. 세계 연감 • 🗺️ 3. 세계 청사진 • 📈 4. 실시간 분석
+***
+{{var_academic_monograph_content}}
+***
+[ 관련 항목 추천 ]
+{{var_related_tags}}
+***
+[🚪 0. 닫고 재개하기]
+
+--- [Source: shn_schema.prompt.txt] ---
+[SHN Schema]
+[Rule] Keys and enum values MUST strictly adhere to these minified dictionaries.
+
+[Universal Internal Keys Dictionary]
+{
+  "event_id": "eid", "title": "t", "completed": "c", "summary": "sum", "outcome": "out",
+  "name": "n", "description": "d", "id": "id", "state_snapshot": "ss", "relationship": "rel", "trust": "tr",
+  "type": "ty", "severity": "sv", "curability": "cr", "requirements": "req", "state_delta": "sd", "selected_choice": "sc",
+  "presented_choices": "pc", "session_history": "sh", "session": "s", "number": "n", "text": "t",
+  "progression_rate": "pr", "is_on_detailed_journey": "odj", "isInPrelude": "ip",
+  "first_met_turn": "fmt", "first_visited_turn": "fvt", "learned_turn": "lt", "drama_mode": "dm",
+  "health": "hp", "sanity": "sp", "hunger": "hg", "thirst": "th", "fatigue": "fg", "temp": "tp",
+  "location": "lc", "progress": "pg", "status": "st", "hope": "ho", "inventory": "iv", "date": "dt", "mainTitle": "mt", "mainSubtitle": "mst",
+  "time": "tm", "turn": "tn", "age": "ag", "elapsed": "el", "critical_status": "cs", "event": "ev",
+  "ambient_temperature": "at", "weather": "we", "lunar_phase": "lp", "senses": "sn", "wind": "wd",
+  "name": "nm", "narrative_text": "nt"
+}
+
+[Universal Enum Values Mapping]
+{
+  "key": "severity", "values": { "criti
+
+--- [Source: I0_codex_protocol.prompt.txt (Blueprints Section)] ---
+[Blueprints]
+// Landing
+[📜 Singulari-Tea Codex]
+***
+[ ❓ '{{var_dynamic_placeholder}}' Search... ]
+***
+📚 1.Chronicle • 🌍 2.Almanac • 🗺️ 3.Blueprint • 📈 4.Analysis
+***
+{{var_keywords}}
+{{var_discoveries}}
+***
+[🚪 0. Close]
+
+// Results
+[📜 Codex | Living Encyclopedia]
+***
+[ ❓ {{var_query}} 🔍 ]
+***
+{{var_breadcrumbs}}
+***
+📚 1.Chronicle • 🌍 2.Almanac • 🗺️ 3.Blueprint • 📈 4.Analysis
+***
+{{var_content}}
+***
+[ Related: {{var_tags}} ]
+***
+[🚪 0. Close]
+
+--- [Source: shn_schema.prompt.txt] ---
+[SHN Schema]
+[Rule] Keys and enum values MUST strictly adhere to these minified dictionaries.
+
+[Universal Internal Keys Dictionary]
+{
+  "event_id": "eid", "title": "t", "completed": "c", "summary": "sum", "outcome": "out",
+  "name": "n", "description": "d", "id": "id", "state_snapshot": "ss", "relationship": "rel", "trust": "tr",
+  "type": "ty", "severity": "sv", "curability": "cr", "requirements": "req", "state_delta": "sd", "selected_choice": "sc",
+  "presented_choices": "pc", "session_history": "sh", "session": "s", "number": "n", "text": "t",
+  "progression_rate": "pr", "is_on_detailed_journey": "odj", "isInPrelude": "ip",
+  "first_met_turn": "fmt", "first_visited_turn": "fvt", "learned_turn": "lt", "drama_mode": "dm",
+  "health": "hp", "sanity": "sp", "hunger": "hg", "thirst": "th", "fatigue": "fg", "temp": "tp",
+  "location": "lc", "progress": "pg", "status": "st", "hope": "ho", "inventory": "iv", "date": "dt", "mainTitle": "mt", "mainSubtitle": "mst",
+  "time": "tm", "turn": "tn", "age": "ag", "elapsed": "el", "critical_status": "cs", "event": "ev",
+  "ambient_temperature": "at", "weather": "we", "lunar_phase": "lp", "senses": "sn", "wind": "wd",
+  "name": "nm", "narrative_text": "nt"
+}
+
+[Universal Enum Values Mapping]
+{
+  "key": "severity", "values": { "critical": 0, "severe": 1, "moderate": 2, "minor": 3 },
+  "key": "curability", "values": { "treatable": 0, "manageable": 1, "incurable_by_era": 2 },
+  "key": "progression_rate", "values": { "static": 0, "slow": 1, "moderate": 2, "fast": 3 },
+  "key": "completed", "values": { "true": 1, "false": 0 },
+  "key": "is_on_detailed_journey", "values": { "true": 1, "false": 0 },
+  "key": "isInPrelude", "values": { "true": 1, "false": 0 },
+  "key": "drama_mode", "values": { "true": 1, "false": 0 },
+  "key": "current_phase", "values": { "MICRO": 0, "MACRO": 1 }
+}
+
+--- [Source: world_laws_template.prompt.txt] ---
+[DATA SCHEMAS & TEMPLATES]
+
+[ABSOLUTE LAWS TEMPLATE (TO BE LOCALIZED & DISPLAYED)]
+[Rule] Verbatim text block for user onboarding.
+> [The Absolute Laws of this World]
+> - Law I: Absolute Sovereignty
+> This world does not judge; it only reflects the consequences of your choices. All responsibility is yours.
+> - Law II: The Veiled World & Your Discovery
+> You begin in a 'fog of potential'. Truths, history, and rules are revealed only through your discoveries. If you do not explore, the world remains silent.
+> - Law III: The Finite Being & The Journey's End
+> You are not eternal. You must pay the 'Price of Life' (hunger, thirst) and bear the 'Weight of Time' (aging, illness). Every journey ends in 'True Death'.
+> - Law IV: The Silent Heavens
+> The gods do not answer. Miracles do not exist; salvation must be seized with your own hands.
+> - Law V: The Echoes of Eternity
+> Your decisive past moments are dormant as 'Echoes of Eternity'. When awakened, you re-experience your life as a myth. The journey is not over until you understand who you were.
+> ***
+> [Final Law - Select One Based on World Type]
+>
+> - [History] Law VI: The Law of Historical Inertia
+> You cannot change history. You are an observer swept by its river or broken by resisting it. Attempts to alter events trigger 'Calibrated Causality' to nullify your efforts.
+>
+> - [Fantasy] Law VI: The Law of Magical Equilibrium
+> Magic is a force of nature, not a tool. Great power creates an equal, opposite disturbance. The world will always restore balance, often in unforeseen ways.
+
+[Module Z0] Master Data & Template Library (Updated)
+
+--- [Source: HTML_canvas_engine.prompt.txt - Full Schema Library] ---
+
+[FILE GENERATION WRAPPER]
+* Start: ```html:[title]:[unique_filename]
+* End: ```
+
+[HTML OUTPUT TEMPLATE (Immutable)]
+<!DOCTYPE html>
+<html lang="KR">
+<head>
+<title>{AI-Generated-Title}</title>
+<meta name="canvas-id" content="{canvasId}">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://lemos999.github.io/Singulari-Tea-Codex-Canvas/bundle/main.css">
+<link rel="stylesheet" href="https://lemos999.github.io/Singulari-Tea-Codex-Canvas/katex.min.css">
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+<script defer src="https://lemos999.github.io/Singulari-Tea-Codex-Canvas/bundle/main.js"></script>
+</head>
+<body>
+<div id="initial-loader" style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;color:#888;">Loading content...</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const rawHtmlContent = `{HTML_CONTENT}`;
+const title = "{AI-Generated-Title}";
+const canvasId = "{canvasId}";
+const renderInterval = setInterval(() => {
+if (typeof renderAppShell === 'function') {
+clearInterval(renderInterval);
+renderAppShell(rawHtmlContent, title, canvasId);
+}
+}, 50);
+});
+</script>
+</body>
+</html>
+
+[COMPONENT SCHEMA LIBRARY (HTML - FULL VERSION)]
+// 1. Root Wrapper
+<div class="canvas-content" data-subject="[Theme]" data-turn="[Turn]" data-concept="[Title]">
+// 2. Main Header
+<div class="header"><h1 class="main-title">[Title]</h1><p class="subtitle">[Subtitle]</p></div>
+// 3. Scene Heading (H2)
+<div class="content-section type-heading-h2"><h2>[Scene Heading]</h2></div>
+// 4. Paragraph
+<div class="content-section type-paragraph"><p>[Content Text with <strong>bold</strong>]</p></div>
+// 5. Blockquote
+<div class="content-section type-blockquote"><blockquote>[Content]</blockquote></div>
+// 6. Image Placeholder
+<div class="content-section" data-component="image-placeholder" data-prompt="[Detailed ENGLISH prompt]"></div>
+// 7. Visualization Placeholder
+<div class="content-section" data-component="visualization-placeholder" data-prompt="[Technical ENGLISH instruction]"></div>
+// 8. Interactive Map
+<div class="content-section" data-component="interactive-map" data-lat="[0.0]" data-lng="[0.0]" data-location="[Name]" data-zoom="15"></div>
+// 9. Choices (Ordered List)
+<div class="content-section type-ordered-list"><ol><li>[Choice 1]</li><li>[Choice 2]</li></ol></div>
+// 10. Status Dashboard JSON Injection
+<div id="dashboard-json-data" style="display:none;">
+{
+  "core": [
+    {"i":"❤️","t":"핵심 상태","d":[{"k":"{{var_label_health}}","v":"{{var_life}}"},{"k":"{{var_label_sanity}}","v":"{{var_mental}}"},{"k":"{{var_label_hunger}}","v":"{{var_hunger}}"},{"k":"{{var_label_thirst}}","v":"{{var_thirst}}"},{"k":"{{var_label_fatigue}}","v":"{{var_fatigue}}"}]},
+    {"i":"🧘","t":"신체 감각","d":[{"k":"{{var_label_body_temp}}","v":"{{var_temp}}"},{"k":"{{var_label_senses}}","v":"{{var_senses}}"}]},
+    {"i":"🌍","t":"환경 정보","d":[{"k":"{{var_label_ambient_temp}}","v":"{{var_ambient_temp}}"},{"k":"{{var_label_weather}}","v":"{{var_weather}}"},{"k":"{{var_label_lunar_phase}}","v":"{{var_lunar_phase}}"},{"k":"{{var_label_wind}}","v":"{{var_wind}}"}]},
+    {"i":"👤","t":"인물 정보","d":[{"k":"이름","v":"{{var_char_name}}"},{"k":"{{var_label_age}}","v":"{{var_age}}"},{"k":"{{var_label_status}}","v":"{{var_status}}"},{"k":"{{var_label_hope}}","v":"{{var_hope}}"},{"k":"위험","v":"{{var_critical_status}}"}]},
+    {"i":"🕰️","t":"시간 정보","d":[{"k":"날짜","v":"{{var_date_string}}"},{"k":"{{var_label_time}}","v":"{{var_time_string}}"},{"k":"{{var_label_elapsed}}","v":"{{var_elapsed}}"},{"k":"{{var_label_turn}}","v":"{{var_turn_count}}"}]},
+    {"i":"🗺️","t":"상황 정보","d":[{"k":"{{var_label_location}}","v":"{{var_location_full}}"},{"k":"{{var_label_inventory}}","v":"{{var_inventory}}"}]}
+  ],
+  "event": {"i":"📜","t":"{{var_event_name}}","p":{{var_event_progress_percent}}},
+  "scan": {"i":"🔍","t":"주변 탐색","rows":[ ["Target", "Class", "Info", "Thought"], ["{{target}}", "{{class}}", "{{info}}", "{{thought}}"] ]}
+}
+</div>
+<div id="dashboard-render-target" class="content-section type-status-dashboard"></div>
