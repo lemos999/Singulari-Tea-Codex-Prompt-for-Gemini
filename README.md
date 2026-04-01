@@ -1,5 +1,6 @@
 # Singulari-Tea Codex: A Modular Architecture for Dynamic Narrative Simulation (only v4)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+GPTs : https://chatgpt.com/g/g-6905bdde46248191a9ee410e72f9b9cc-world-simulator
 
 ## 1. Overview
 
